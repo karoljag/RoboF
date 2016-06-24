@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20160622 12:23:13.217" generator="Robot 3.0 (Python 2.7.6 on linux2)">
+<suite source="/home/soi/Pulpit/selenium_robot_jetblue_isaa/jetblueTests.robot" id="s1" name="jetblueTests">
+<test id="s1-t1" name="Page opens correctly">
+<kw name="Open Browser to /profile page" library="resource">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>8</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${password}</var>
+</assign>
+<msg timestamp="20160622 12:23:13.312" level="INFO">${password} = 18721696</msg>
+<status status="PASS" endtime="20160622 12:23:13.312" starttime="20160622 12:23:13.312"></status>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160622 12:23:13.313" level="INFO">Opening browser 'ff' to base url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160622 12:23:18.789" starttime="20160622 12:23:13.312"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20160622 12:23:18.790" starttime="20160622 12:23:18.790"></status>
+</kw>
+<status status="PASS" endtime="20160622 12:23:18.791" starttime="20160622 12:23:13.312"></status>
+</kw>
+<status status="PASS" endtime="20160622 12:23:18.791" critical="yes" starttime="20160622 12:23:13.311"></status>
+</test>
+<test id="s1-t2" name="Login">
+<kw name="Login to jetblue via fake logger" library="login">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath = //input[@placeholder='JetBlue user ID']</arg>
+</arguments>
+<status status="PASS" endtime="20160622 12:23:21.147" starttime="20160622 12:23:18.794"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>12</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20160622 12:23:21.148" level="INFO">${ret} = EFoFBDlFAAIm</msg>
+<status status="PASS" endtime="20160622 12:23:21.148" starttime="20160622 12:23:21.148"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath = //input[@placeholder='JetBlue user ID']</arg>
+<arg>${ret}</arg>
+</arguments>
+<msg timestamp="20160622 12:23:21.149" level="INFO">Typing text 'EFoFBDlFAAIm' into text field 'xpath = //input[@placeholder='JetBlue user ID']'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160622 12:23:22.385" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160622 12:23:22.385" starttime="20160622 12:23:21.680"></status>
+</kw>
+<msg timestamp="20160622 12:23:22.387" level="FAIL">ElementNotVisibleException: Message: Element is not currently visible and so may not be interacted with
+Stacktrace:
+    at fxdriver.preconditions.visible (file:///tmp/tmpQ5mofy/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:10092)
+    at DelayedCommand.prototype.checkPreconditions_ (file:///tmp/tmpQ5mofy/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12644)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpQ5mofy/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpQ5mofy/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/&lt; (file:///tmp/tmpQ5mofy/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)</msg>
+<status status="FAIL" endtime="20160622 12:23:22.387" starttime="20160622 12:23:21.149"></status>
+</kw>
+<status status="FAIL" endtime="20160622 12:23:22.387" starttime="20160622 12:23:18.793"></status>
+</kw>
+<status status="FAIL" endtime="20160622 12:23:22.388" critical="yes" starttime="20160622 12:23:18.792">ElementNotVisibleException: Message: Element is not currently visible and so may not be interacted with
+Stacktrace:
+    at fxdriver.preconditions.visible (file:///tmp/tmpQ5mofy/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:10092)
+    at DelayedCommand.prototype.checkPreconditions_ (file:///tmp/tmpQ5mofy/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12644)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpQ5mofy/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpQ5mofy/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/&lt; (file:///tmp/tmpQ5mofy/webdriver-py-profilecopy/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)</status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160622 12:23:22.930" starttime="20160622 12:23:22.389"></status>
+</kw>
+<doc>A test suite for opening a dashboard page.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="FAIL" endtime="20160622 12:23:22.930" starttime="20160622 12:23:13.218"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="1">Critical Tests</stat>
+<stat fail="1" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="jetblueTests" pass="1">jetblueTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

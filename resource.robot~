@@ -1,0 +1,26 @@
+*** Settings ***
+Documentation     A resource file with reusable keywords and variables.
+
+Library           Selenium2Library
+Library           String
+Library           Collections
+Library           DebugLibrary
+
+*** Variables ***
+${URL}      http://qbo-dev.isaacloud.com/management#/dashboard
+${BROWSER}        Firefox
+${DELAY}          1
+
+*** Keywords ***
+Open Browser To Dashboard
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
+    Input Text  css=#email  dzelechowski@sointeractive.pl
+    Input Text  css=#password  Daniel2015@
+	debug
+    click element  css=button.btn
+    click element  css=li.ng-scope:nth-child(5) > a:nth-child(1)
+
+
+#przykładowy xpath click element  xpath=//tbody/tr[1]/td[5]
