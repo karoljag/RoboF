@@ -7,4 +7,3 @@ Login to jetblue via fake logger
     Input text    xpath = //input[@placeholder='JetBlue user ID']    ${ret}
     click element    xpath = //button[@class='button blue']
     Log To Console    ${ret}
-    debug
