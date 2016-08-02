@@ -11,7 +11,7 @@ Resource  my_stats_resource.robot
 Resource  settings_resource.robot
 
 *** Variables ***
-${URL}  https://jetblueb-qa.isaacloud.com
+${URL}  http://orange-dev.isaacloud.com/
 ${BROWSER}  Firefox
 ${DELAY}  1
 ${USER}  10
