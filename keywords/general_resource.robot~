@@ -1,0 +1,28 @@
+*** Settings ***
+Library  Selenium2Library  run_on_failure=Nothing
+
+Resource  home_resource.robot
+Resource  badge_collection_resource.robot
+Resource  map_resource.robot
+Resource  friends_resource.robot
+Resource  leaderboards_resource.robot
+Resource  news_resource.robot
+Resource  my_stats_resource.robot
+Resource  settings_resource.robot
+
+*** Variables ***
+${URL}  https://jetblueb-qa.isaacloud.com
+${BROWSER}  Firefox
+${DELAY}  1
+${USER}  10
+
+*** Keywords ***
+Log in to Orange-Dev
+	Open Browser  ${URL}  ${BROWSER}
+	Maximize Browser Window
+	Set Window Size  ${1920}  ${1080}
+	Set Selenium Speed  ${DELAY}
+
+	Wait Until Keyword Succeeds  3 sec  3 sec  Input Text  xpath=/html/body/section/div/div[1]/div/form/input[2]  ${USER}
+	Click Element  xpath=/html/body/section/div/div[1]/div/form/button
+	Go To  ${URL}

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20160802 07:21:57.847" generator="Robot 3.0 (Python 2.7.6 on linux2)">
+<suite source="/home/soi/front-tests/test-cases/badge_collection.robot" id="s1" name="Badge Collection">
+<kw type="setup" name="Log in to Orange-Dev" library="general_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160802 07:21:57.941" level="INFO">Opening browser 'Firefox' to base url 'https://jetblueb-qa.isaacloud.com'</msg>
+<status status="PASS" endtime="20160802 07:22:02.892" starttime="20160802 07:21:57.940"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160802 07:22:02.897" starttime="20160802 07:22:02.892"></status>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<doc>Sets the `width` and `height` of the current window to the specified values.</doc>
+<arguments>
+<arg>${1920}</arg>
+<arg>${1080}</arg>
+</arguments>
+<status status="PASS" endtime="20160802 07:22:02.926" starttime="20160802 07:22:02.897"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20160802 07:22:02.927" starttime="20160802 07:22:02.927"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath = //*[@id='loginEmail']</arg>
+</arguments>
+<status status="PASS" endtime="20160802 07:22:05.971" starttime="20160802 07:22:02.927"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath = //*[@id='loginEmail']</arg>
+<arg>qasoi0@sointeractive.pl</arg>
+</arguments>
+<msg timestamp="20160802 07:22:05.972" level="INFO">Typing text 'qasoi0@sointeractive.pl' into text field 'xpath = //*[@id='loginEmail']'</msg>
+<status status="PASS" endtime="20160802 07:22:09.185" starttime="20160802 07:22:05.971"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//*[@id='ngdialog1']/div[2]/div[2]/div/div[2]/form/button</arg>
+</arguments>
+<msg timestamp="20160802 07:22:09.186" level="INFO">Clicking element '//*[@id='ngdialog1']/div[2]/div[2]/div/div[2]/form/button'.</msg>
+<status status="PASS" endtime="20160802 07:22:11.341" starttime="20160802 07:22:09.186"></status>
+</kw>
+<status status="PASS" endtime="20160802 07:22:11.341" starttime="20160802 07:21:57.939"></status>
+</kw>
+<test id="s1-t1" name="Badge Collection page is open correctly">
+<kw name="Open Badge Collection Page" library="badge_collection_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[2]/a</arg>
+</arguments>
+<msg timestamp="20160802 07:22:11.344" level="INFO">Clicking element 'xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[2]/a'.</msg>
+<msg timestamp="20160802 07:22:12.446" level="FAIL">WebDriverException: Message: Element is not clickable at point (512, 475). Other element would receive the click: &lt;div class="standard-content"&gt;&lt;/div&gt;
+</msg>
+<status status="FAIL" endtime="20160802 07:22:12.446" starttime="20160802 07:22:11.343"></status>
+</kw>
+<status status="FAIL" endtime="20160802 07:22:12.446" starttime="20160802 07:22:11.343"></status>
+</kw>
+<status status="FAIL" endtime="20160802 07:22:12.447" critical="yes" starttime="20160802 07:22:11.341">WebDriverException: Message: Element is not clickable at point (512, 475). Other element would receive the click: &lt;div class="standard-content"&gt;&lt;/div&gt;
+</status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160802 07:22:13.482" starttime="20160802 07:22:12.449"></status>
+</kw>
+<status status="FAIL" endtime="20160802 07:22:13.482" starttime="20160802 07:21:57.847"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Badge Collection" pass="0">Badge Collection</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

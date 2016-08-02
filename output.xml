@@ -1,112 +1,1994 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20160624 07:25:38.334" generator="Robot 3.0 (Python 2.7.6 on linux2)">
-<suite source="/home/soi/Pulpit/selenium_robot_jetblue_isaa/jetblueTests.robot" id="s1" name="jetblueTests">
-<test id="s1-t1" name="Page opens correctly">
-<kw name="Open Browser to /profile page" library="resource">
-<kw name="Generate Random String" library="String">
-<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<arguments>
-<arg>8</arg>
-<arg>[NUMBERS]</arg>
-</arguments>
-<assign>
-<var>${password}</var>
-</assign>
-<msg timestamp="20160624 07:25:38.429" level="INFO">${password} = 03232758</msg>
-<status status="PASS" endtime="20160624 07:25:38.429" starttime="20160624 07:25:38.428"></status>
-</kw>
+<robot generated="20160718 09:48:35.026" generator="Robot 3.0 (Python 2.7.6 on linux2)">
+<suite source="/home/soi/tests/jetblue/front-tests/test-cases" id="s1" name="Test-Cases">
+<suite source="/home/soi/tests/jetblue/front-tests/test-cases/badge_collection.robot" id="s1-s1" name="Badge Collection">
+<kw type="setup" name="Log in to Orange-Dev" library="general_resource">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
 <arguments>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20160624 07:25:38.429" level="INFO">Opening browser 'ff' to base url 'http://orange-dev.isaacloud.com/'</msg>
-<status status="PASS" endtime="20160624 07:25:42.045" starttime="20160624 07:25:38.429"></status>
+<msg timestamp="20160718 09:48:35.109" level="INFO">Opening browser 'Firefox' to base url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:48:39.397" starttime="20160718 09:48:35.109"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160718 09:48:40.026" starttime="20160718 09:48:39.397"></status>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<doc>Sets the `width` and `height` of the current window to the specified values.</doc>
+<arguments>
+<arg>${1920}</arg>
+<arg>${1080}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:48:40.088" starttime="20160718 09:48:40.026"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20160624 07:25:42.046" starttime="20160624 07:25:42.046"></status>
+<status status="PASS" endtime="20160718 09:48:40.089" starttime="20160718 09:48:40.088"></status>
 </kw>
-<status status="PASS" endtime="20160624 07:25:42.046" starttime="20160624 07:25:38.428"></status>
-</kw>
-<status status="PASS" endtime="20160624 07:25:42.046" critical="yes" starttime="20160624 07:25:38.428"></status>
-</test>
-<test id="s1-t2" name="Login">
-<kw name="Login to jetblue via fake logger" library="login">
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element specified with `locator` appears on current page.</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
 <arguments>
-<arg>xpath = //input[@placeholder='JetBlue user ID']</arg>
+<arg>3 sec</arg>
+<arg>3 sec</arg>
+<arg>Input Text</arg>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
 </arguments>
-<status status="PASS" endtime="20160624 07:25:43.184" starttime="20160624 07:25:42.048"></status>
-</kw>
-<kw name="Generate Random String" library="String">
-<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<arguments>
-<arg>12</arg>
-<arg>[LETTERS]</arg>
-</arguments>
-<assign>
-<var>${ret}</var>
-</assign>
-<msg timestamp="20160624 07:25:43.185" level="INFO">${ret} = TrmtOEsOVEtX</msg>
-<status status="PASS" endtime="20160624 07:25:43.185" starttime="20160624 07:25:43.185"></status>
-</kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
 <arguments>
-<arg>xpath = //input[@placeholder='JetBlue user ID']</arg>
-<arg>${ret}</arg>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
 </arguments>
-<msg timestamp="20160624 07:25:43.186" level="INFO">Typing text 'TrmtOEsOVEtX' into text field 'xpath = //input[@placeholder='JetBlue user ID']'</msg>
-<status status="PASS" endtime="20160624 07:25:44.884" starttime="20160624 07:25:43.185"></status>
+<msg timestamp="20160718 09:48:40.089" level="INFO">Typing text '10' into text field 'xpath=/html/body/section/div/div[1]/div/form/input[2]'</msg>
+<status status="PASS" endtime="20160718 09:48:43.284" starttime="20160718 09:48:40.089"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:48:43.284" starttime="20160718 09:48:40.089"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
-<arg>xpath = //button[@class='button blue']</arg>
+<arg>xpath=/html/body/section/div/div[1]/div/form/button</arg>
 </arguments>
-<msg timestamp="20160624 07:25:44.884" level="INFO">Clicking element 'xpath = //button[@class='button blue']'.</msg>
-<status status="PASS" endtime="20160624 07:25:45.987" starttime="20160624 07:25:44.884"></status>
+<msg timestamp="20160718 09:48:43.284" level="INFO">Clicking element 'xpath=/html/body/section/div/div[1]/div/form/button'.</msg>
+<status status="PASS" endtime="20160718 09:48:45.391" starttime="20160718 09:48:43.284"></status>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
 <arguments>
-<arg>${ret}</arg>
+<arg>${URL}</arg>
 </arguments>
-<status status="PASS" endtime="20160624 07:25:45.988" starttime="20160624 07:25:45.988"></status>
+<msg timestamp="20160718 09:48:45.392" level="INFO">Opening url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:48:46.980" starttime="20160718 09:48:45.392"></status>
 </kw>
-<kw name="Debug" library="DebugLibrary">
-<doc>Open a interactive shell, run any RobotFramework keywords,</doc>
-<status status="FAIL" endtime="20160624 07:26:21.253" starttime="20160624 07:25:45.989"></status>
+<status status="PASS" endtime="20160718 09:48:46.980" starttime="20160718 09:48:35.109"></status>
 </kw>
-<status status="FAIL" endtime="20160624 07:26:21.254" starttime="20160624 07:25:42.048"></status>
+<test id="s1-s1-t1" name="Badge Collection page is open correctly">
+<kw name="Open Badge Collection Page" library="badge_collection_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[2]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:48:46.982" level="INFO">Clicking element 'xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[2]/a'.</msg>
+<status status="PASS" endtime="20160718 09:48:49.451" starttime="20160718 09:48:46.981"></status>
 </kw>
-<status status="FAIL" endtime="20160624 07:26:21.254" critical="yes" starttime="20160624 07:25:42.047">Execution terminated by signal</status>
+<status status="PASS" endtime="20160718 09:48:49.451" starttime="20160718 09:48:46.981"></status>
+</kw>
+<kw name="Verify The Presence Of Search Bar" library="badge_collection_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='search-box-badges']</arg>
+</arguments>
+<msg timestamp="20160718 09:48:50.474" level="INFO">Current page contains element 'xpath=//*[@id='search-box-badges']'.</msg>
+<status status="PASS" endtime="20160718 09:48:50.474" starttime="20160718 09:48:49.452"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:48:50.474" starttime="20160718 09:48:49.452"></status>
+</kw>
+<kw name="Verify The Presence Of Badge Collection Space" library="badge_collection_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.ng-scope</arg>
+</arguments>
+<msg timestamp="20160718 09:48:51.487" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.ng-scope'.</msg>
+<status status="PASS" endtime="20160718 09:48:51.488" starttime="20160718 09:48:50.475"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:48:51.488" starttime="20160718 09:48:50.475"></status>
+</kw>
+<kw name="Verify The Presence Of Badges Types Button" library="badge_collection_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[1]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:48:52.505" level="INFO">Current page contains element 'xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[1]/a'.</msg>
+<status status="PASS" endtime="20160718 09:48:52.505" starttime="20160718 09:48:51.489"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[2]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:48:53.527" level="INFO">Current page contains element 'xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[2]/a'.</msg>
+<status status="PASS" endtime="20160718 09:48:53.527" starttime="20160718 09:48:52.506"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[3]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:48:54.550" level="INFO">Current page contains element 'xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[3]/a'.</msg>
+<status status="PASS" endtime="20160718 09:48:54.550" starttime="20160718 09:48:53.527"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[4]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:48:55.571" level="INFO">Current page contains element 'xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[4]/a'.</msg>
+<status status="PASS" endtime="20160718 09:48:55.572" starttime="20160718 09:48:54.551"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[5]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:48:56.596" level="INFO">Current page contains element 'xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[5]/a'.</msg>
+<status status="PASS" endtime="20160718 09:48:56.597" starttime="20160718 09:48:55.572"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:48:56.597" starttime="20160718 09:48:51.488"></status>
+</kw>
+<kw name="Verify The Presence of All Badges" library="badge_collection_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[2]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:48:56.598" level="INFO">Clicking element 'xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[2]/a'.</msg>
+<status status="PASS" endtime="20160718 09:48:59.020" starttime="20160718 09:48:56.598"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Antigua</arg>
+</arguments>
+<msg timestamp="20160718 09:49:01.074" level="INFO">Current page contains text 'Antigua'.</msg>
+<status status="PASS" endtime="20160718 09:49:01.074" starttime="20160718 09:48:59.020"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Singapore Airlines</arg>
+</arguments>
+<msg timestamp="20160718 09:49:03.142" level="INFO">Current page contains text 'Singapore Airlines'.</msg>
+<status status="PASS" endtime="20160718 09:49:03.142" starttime="20160718 09:49:01.074"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Turks &amp; Caicos</arg>
+</arguments>
+<msg timestamp="20160718 09:49:05.246" level="INFO">Current page contains text 'Turks &amp; Caicos'.</msg>
+<status status="PASS" endtime="20160718 09:49:05.246" starttime="20160718 09:49:03.142"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>The JetBlue Business Card</arg>
+</arguments>
+<msg timestamp="20160718 09:49:07.312" level="INFO">Current page contains text 'The JetBlue Business Card'.</msg>
+<status status="PASS" endtime="20160718 09:49:07.313" starttime="20160718 09:49:05.246"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Albany Tourist</arg>
+</arguments>
+<msg timestamp="20160718 09:49:09.353" level="INFO">Current page contains text 'Albany Tourist'.</msg>
+<status status="PASS" endtime="20160718 09:49:09.354" starttime="20160718 09:49:07.313"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Richmond Practically a Local</arg>
+</arguments>
+<msg timestamp="20160718 09:49:11.426" level="INFO">Current page contains text 'Richmond Practically a Local'.</msg>
+<status status="PASS" endtime="20160718 09:49:11.427" starttime="20160718 09:49:09.354"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='showPositionsLower']</arg>
+</arguments>
+<msg timestamp="20160718 09:49:12.471" level="INFO">Current page contains element 'xpath=//*[@id='showPositionsLower']'.</msg>
+<status status="PASS" endtime="20160718 09:49:12.472" starttime="20160718 09:49:11.427"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:49:12.472" starttime="20160718 09:48:56.598"></status>
+</kw>
+<kw name="Verify The Presence of Loyalty Badges" library="badge_collection_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[3]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:49:12.473" level="INFO">Clicking element 'xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[3]/a'.</msg>
+<status status="PASS" endtime="20160718 09:49:14.674" starttime="20160718 09:49:12.473"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Loyalty 0/53</arg>
+</arguments>
+<msg timestamp="20160718 09:49:16.711" level="INFO">Current page contains text 'Loyalty 0/53'.</msg>
+<status status="PASS" endtime="20160718 09:49:16.711" starttime="20160718 09:49:14.675"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>True Believer</arg>
+</arguments>
+<msg timestamp="20160718 09:49:18.760" level="INFO">Current page contains text 'True Believer'.</msg>
+<status status="PASS" endtime="20160718 09:49:18.761" starttime="20160718 09:49:16.711"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Nice to Tweet You</arg>
+</arguments>
+<msg timestamp="20160718 09:49:20.803" level="INFO">Current page contains text 'Nice to Tweet You'.</msg>
+<status status="PASS" endtime="20160718 09:49:20.804" starttime="20160718 09:49:18.761"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Welcome</arg>
+</arguments>
+<msg timestamp="20160718 09:49:22.843" level="INFO">Current page contains text 'Welcome'.</msg>
+<status status="PASS" endtime="20160718 09:49:22.844" starttime="20160718 09:49:20.804"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>A Breath of Fresh Share</arg>
+</arguments>
+<msg timestamp="20160718 09:49:24.917" level="INFO">Current page contains text 'A Breath of Fresh Share'.</msg>
+<status status="PASS" endtime="20160718 09:49:24.917" starttime="20160718 09:49:22.844"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Promoter</arg>
+</arguments>
+<msg timestamp="20160718 09:49:26.961" level="INFO">Current page contains text 'Promoter'.</msg>
+<status status="PASS" endtime="20160718 09:49:26.962" starttime="20160718 09:49:24.917"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Friend-Setter</arg>
+</arguments>
+<msg timestamp="20160718 09:49:29.003" level="INFO">Current page contains text 'Friend-Setter'.</msg>
+<status status="PASS" endtime="20160718 09:49:29.003" starttime="20160718 09:49:26.962"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='showPositionsLower']</arg>
+</arguments>
+<msg timestamp="20160718 09:49:30.033" level="INFO">Current page contains element 'xpath=//*[@id='showPositionsLower']'.</msg>
+<status status="PASS" endtime="20160718 09:49:30.033" starttime="20160718 09:49:29.004"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:49:30.033" starttime="20160718 09:49:12.472"></status>
+</kw>
+<kw name="Verify The Presence of Travel Badges" library="badge_collection_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[4]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:49:30.035" level="INFO">Clicking element 'xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[4]/a'.</msg>
+<status status="PASS" endtime="20160718 09:49:32.416" starttime="20160718 09:49:30.034"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Travel 0/322</arg>
+</arguments>
+<msg timestamp="20160718 09:49:34.466" level="INFO">Current page contains text 'Travel 0/322'.</msg>
+<status status="PASS" endtime="20160718 09:49:34.466" starttime="20160718 09:49:32.416"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Alaska Practically a Local</arg>
+</arguments>
+<msg timestamp="20160718 09:49:36.585" level="INFO">Current page contains text 'Alaska Practically a Local'.</msg>
+<status status="PASS" endtime="20160718 09:49:36.586" starttime="20160718 09:49:34.467"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Albuquerque Tourist</arg>
+</arguments>
+<msg timestamp="20160718 09:49:38.646" level="INFO">Current page contains text 'Albuquerque Tourist'.</msg>
+<status status="PASS" endtime="20160718 09:49:38.647" starttime="20160718 09:49:36.586"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Albuquerque Practically a Local</arg>
+</arguments>
+<msg timestamp="20160718 09:49:40.705" level="INFO">Current page contains text 'Albuquerque Practically a Local'.</msg>
+<status status="PASS" endtime="20160718 09:49:40.705" starttime="20160718 09:49:38.647"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Aruba Been There, Done That</arg>
+</arguments>
+<msg timestamp="20160718 09:49:42.755" level="INFO">Current page contains text 'Aruba Been There, Done That'.</msg>
+<status status="PASS" endtime="20160718 09:49:42.755" starttime="20160718 09:49:40.706"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='showPositionsLower']</arg>
+</arguments>
+<msg timestamp="20160718 09:49:43.810" level="INFO">Current page contains element 'xpath=//*[@id='showPositionsLower']'.</msg>
+<status status="PASS" endtime="20160718 09:49:43.810" starttime="20160718 09:49:42.756"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:49:43.810" starttime="20160718 09:49:30.034"></status>
+</kw>
+<kw name="Verify The Presence of Partner Badges" library="badge_collection_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[5]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:49:43.812" level="INFO">Clicking element 'xpath=//*[@id='container']/div[1]/div[1]/div/tab-filter/nav/ul/li[5]/a'.</msg>
+<status status="PASS" endtime="20160718 09:49:46.078" starttime="20160718 09:49:43.812"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Partner 0/106</arg>
+</arguments>
+<msg timestamp="20160718 09:49:48.124" level="INFO">Current page contains text 'Partner 0/106'.</msg>
+<status status="PASS" endtime="20160718 09:49:48.124" starttime="20160718 09:49:46.079"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Plant the Seed</arg>
+</arguments>
+<msg timestamp="20160718 09:49:50.183" level="INFO">Current page contains text 'Plant the Seed'.</msg>
+<status status="PASS" endtime="20160718 09:49:50.184" starttime="20160718 09:49:48.124"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Flower Hour</arg>
+</arguments>
+<msg timestamp="20160718 09:49:52.224" level="INFO">Current page contains text 'Flower Hour'.</msg>
+<status status="PASS" endtime="20160718 09:49:52.225" starttime="20160718 09:49:50.184"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>JetBlue Card from American Express</arg>
+</arguments>
+<msg timestamp="20160718 09:49:54.270" level="INFO">Current page contains text 'JetBlue Card from American Express'.</msg>
+<status status="PASS" endtime="20160718 09:49:54.270" starttime="20160718 09:49:52.225"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Atlantis Authority</arg>
+</arguments>
+<msg timestamp="20160718 09:49:56.323" level="INFO">Current page contains text 'Atlantis Authority'.</msg>
+<status status="PASS" endtime="20160718 09:49:56.323" starttime="20160718 09:49:54.270"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='showPositionsLower']</arg>
+</arguments>
+<msg timestamp="20160718 09:49:57.354" level="INFO">Current page contains element 'xpath=//*[@id='showPositionsLower']'.</msg>
+<status status="PASS" endtime="20160718 09:49:57.354" starttime="20160718 09:49:56.324"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:49:57.354" starttime="20160718 09:49:43.811"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:49:57.355" critical="yes" starttime="20160718 09:48:46.980"></status>
 </test>
 <kw type="teardown" name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20160624 07:26:21.284" starttime="20160624 07:26:21.255"></status>
+<status status="PASS" endtime="20160718 09:49:58.378" starttime="20160718 09:49:57.356"></status>
 </kw>
-<doc>A test suite for opening a dashboard page.
+<status status="PASS" endtime="20160718 09:49:58.378" starttime="20160718 09:48:35.044"></status>
+</suite>
+<suite source="/home/soi/tests/jetblue/front-tests/test-cases/friends.robot" id="s1-s2" name="Friends">
+<kw type="setup" name="Log in to Orange-Dev" library="general_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160718 09:49:58.390" level="INFO">Opening browser 'Firefox' to base url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:50:04.248" starttime="20160718 09:49:58.390"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160718 09:50:05.257" starttime="20160718 09:50:04.248"></status>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<doc>Sets the `width` and `height` of the current window to the specified values.</doc>
+<arguments>
+<arg>${1920}</arg>
+<arg>${1080}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:50:06.330" starttime="20160718 09:50:05.258"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:50:06.331" starttime="20160718 09:50:06.330"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3 sec</arg>
+<arg>3 sec</arg>
+<arg>Input Text</arg>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<msg timestamp="20160718 09:50:06.332" level="INFO">Typing text '10' into text field 'xpath=/html/body/section/div/div[1]/div/form/input[2]'</msg>
+<status status="PASS" endtime="20160718 09:50:09.549" starttime="20160718 09:50:06.332"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:09.550" starttime="20160718 09:50:06.331"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/button</arg>
+</arguments>
+<msg timestamp="20160718 09:50:09.550" level="INFO">Clicking element 'xpath=/html/body/section/div/div[1]/div/form/button'.</msg>
+<status status="PASS" endtime="20160718 09:50:11.682" starttime="20160718 09:50:09.550"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20160718 09:50:11.683" level="INFO">Opening url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:50:13.098" starttime="20160718 09:50:11.683"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:13.098" starttime="20160718 09:49:58.390"></status>
+</kw>
+<test id="s1-s2-t1" name="Friends page is open correctly">
+<kw name="Open Friends Page" library="friends_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[4]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:50:13.099" level="INFO">Clicking element 'xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[4]/a'.</msg>
+<status status="PASS" endtime="20160718 09:50:15.323" starttime="20160718 09:50:13.099"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:15.323" starttime="20160718 09:50:13.099"></status>
+</kw>
+<kw name="Verify The Presence Of &quot;Connect your Facebook account&quot; Link" library="friends_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id='friendsList']/p/a</arg>
+</arguments>
+<msg timestamp="20160718 09:50:17.382" level="INFO">&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;&lt;head&gt;&lt;style type="text/css"&gt;@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}&lt;/style&gt;
+	&lt;meta charset="utf-8" /&gt;
 
-This test has a workflow that is created using keywords in
-the imported resource file.</doc>
-<status status="FAIL" endtime="20160624 07:26:21.284" starttime="20160624 07:25:38.335"></status>
+	&lt;title&gt;Jet Blue Badges&lt;/title&gt;
+	&lt;meta content="JetBlue Badges" name="description" /&gt;
+	&lt;meta content="SoInteractive" name="author" /&gt;
+
+	&lt;!-- external styles - after integration with jetblue change path -&gt; use styles used in rest of jetblue portal --&gt;
+	&lt;!-- web styles --&gt;
+	&lt;link href="/external/styles/web/page-title.css" rel="stylesheet" /&gt;
+	&lt;link href="/external/styles/web/routemap.css" rel="stylesheet" /&gt;
+	&lt;!--&lt;link rel="stylesheet" href="/external/styles/web/global.css"&gt;--&gt;
+	&lt;!--&lt;link rel="stylesheet" href="/external/styles/web/main.css"&gt;--&gt;
+
+	&lt;!-- default styles --&gt;
+	&lt;link href="/external/styles/default/resolve.css" rel="stylesheet" /&gt;
+	&lt;link href="/external/styles/default/global.css" rel="stylesheet" /&gt;
+	&lt;link href="/external/styles/default/Background.css" rel="stylesheet" /&gt;
+
+	&lt;script src="http://fonts.jetblue.com/sfh4pzq.js" type="text/javascript"&gt;&lt;/script&gt;
+	&lt;!-- temp font configuration --&gt;
+	&lt;link href="/font/stylesheet.css" rel="stylesheet" /&gt;
+
+	&lt;!-- components styles--&gt;
+	&lt;!-- social --&gt;
+	&lt;link href="/components/angular-socialshare/angular-socialshare.min.css" rel="stylesheet" /&gt;
+
+	&lt;!-- notifications --&gt;
+	&lt;link href="/components/angular-ui-notification/dist/angular-ui-notification.min.css" rel="stylesheet" /&gt;
+
+	&lt;!-- dialog --&gt;
+	&lt;link href="/components/ng-dialog/css/ngDialog.min.css" rel="stylesheet" /&gt;
+
+	&lt;!-- scrollbar --&gt;
+	&lt;link href="/components/ng-scrollbar/dist/ng-scrollbar.min.css" rel="stylesheet" /&gt;
+
+
+	&lt;!-- application styles --&gt;
+	&lt;!-- should be always at the end of styles list --&gt;
+	&lt;link href="/css/styles.css" rel="stylesheet" /&gt;
+
+	&lt;base href="/" /&gt;
+&lt;script id="twitter-wjs" async="" src="https://platform.twitter.com/widgets.js"&gt;&lt;/script&gt;&lt;style type="text/css"&gt;.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset&amp;gt;div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title&amp;gt;span{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}&lt;/style&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- uiView:  --&gt;&lt;section ui-view="" id="JetBlue" class="ng-scope"&gt;&lt;div class="debugerator-widget ng-isolate-scope" modules="[&amp;quot;session&amp;quot;,&amp;quot;achievements-manager&amp;quot;]"&gt;&lt;div class="debugerator-module module-session"&gt;
+	&lt;h3 ng-click="toggleModule('session')"&gt;Session&lt;/h3&gt;
+	&lt;div ng-class="hidden.session ? 'hidden' : ''"&gt;
+		&lt;div class="sessionInfo ng-binding"&gt;
+			Logged as: test@test.pl &lt;!-- ngIf: loggedId --&gt;&lt;span ng-if="loggedId" class="ng-binding ng-scope"&gt;(ID: 10)&lt;/span&gt;&lt;!-- end ngIf: loggedId --&gt;
+		&lt;/div&gt;
+		&lt;form ng-submit="login()" ng-class="loggedIn || loggedEmail == 'checking...' ? 'hidden' : ''" class="ng-pristine ng-valid hidden"&gt;
+			&lt;input type="text" placeholder="JetBlue 'SSWEB2TGC' cookie value" value="" ng-model="cookie" class="ng-pristine ng-untouched ng-valid" /&gt;
+			&lt;small&gt;or&lt;/small&gt;
+			&lt;input type="text" placeholder="JetBlue user ID" value="" ng-model="id" class="ng-pristine ng-untouched ng-valid" /&gt;
+			&lt;button class="button blue"&gt;Log in&lt;/button&gt;
+		&lt;/form&gt;
+		&lt;button ng-click="logout()" class="button blue" ng-class="loggedIn ? '' : 'hidden'"&gt;Log out&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;div class="debugerator-module module-achievements-manager"&gt;
+	&lt;h3 ng-click="toggleModule('achievement-manager')"&gt;Achievements manager&lt;/h3&gt;
+
+	&lt;div ng-class="hidden['achievement-manager'] ? 'hidden' : ''"&gt;
+		&lt;!-- ngIf: error.achievements --&gt;&lt;div ng-if="error.achievements" class="ng-scope"&gt;
+			&lt;p&gt;&lt;strong&gt;Coś jest nie tak z pobieraniem informacji o achievementach.&lt;/strong&gt;&lt;/p&gt;
+			&lt;p&gt;Spróbuj odpadlić w plik &lt;strong&gt;getInfoFromGoogleDrive.js&lt;/strong&gt; znajdujący się w katalogu &lt;strong&gt;src&lt;/strong&gt; za pomocą &lt;strong&gt;node&lt;/strong&gt;.&lt;/p&gt;
+		&lt;/div&gt;&lt;!-- end ngIf: error.achievements --&gt;
+		&lt;!-- ngIf: !error.achievements --&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;!-- uiView: header --&gt;&lt;section ui-view="header" class="ng-scope"&gt;&lt;div id="bgHolder" class="ng-scope"&gt;
+	&lt;div class="background"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="jb-header" class="ng-scope"&gt;
+	&lt;div class="wrapper"&gt;
+		&lt;h1&gt;&lt;a class="logo" href="/"&gt;&lt;img alt="JetBlue" src="/img/jetblue-white-reg.png" /&gt;&lt;/a&gt;&lt;/h1&gt;
+
+		&lt;div class="global-nav"&gt;
+			&lt;div align="right"&gt;
+				&lt;iframe align="top" width="500" height="38" frameborder="0" title="Flight Alerts" name="hdalert" id="hdalert" scrolling="no" marginheight="0" marginwidth="0" src="https://www.jetblue.com/JetblueAlerts/MainTitle.aspx" role="presentation"&gt;&lt;/iframe&gt;
+			&lt;/div&gt;
+			&lt;ul class="login-utility"&gt;
+				&lt;li&gt;
+					&lt;a lang="es" href="http://hola.jetblue.com/" class="espanol jb-primary-link"&gt;Español&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a href="/help/" class="help jb-primary-link"&gt; Help &lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a href="/contact-us/" class="contact-us jb-primary-link"&gt; Contact us &lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li class="soflyHeaderMaster"&gt;
+					&lt;a href="/SoFly/" class="jb-primary-link"&gt;SoFly&lt;/a&gt;
+				&lt;/li&gt;
+
+				&lt;li class="true-blue-sign-in"&gt;
+                    &lt;span class="trueblue-sprite"&gt;
+                        &lt;img class="trueblue-sprite-login" alt="TrueBlue Login" src="/img/bg-true-blue-label.jpg" /&gt;
+                    &lt;/span&gt;
+					&lt;a href="https://book.jetblue.com/B6.auth/login?intcmp=hd_signin&amp;amp;service=https://www.jetblue.com/default.aspx" class="sign-in jb-primary-link"&gt;&lt;span&gt;Sign In&lt;/span&gt;&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li class="true-blue-join"&gt;
+					&lt;a href="https://trueblue.jetblue.com/web/trueblue/register/?intcmp=hd_join" class="join jb-primary-link"&gt;
+						&lt;span&gt;Join&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+
+			&lt;/ul&gt;
+
+		&lt;/div&gt;
+		&lt;!-- END: .global-nav --&gt;
+		&lt;div class="main-nav"&gt;
+			&lt;ul id="jb-primary-links"&gt;
+				&lt;!-- @v: 1.0.1 - 2015-0420 for prod (updated from prod src) --&gt;
+				&lt;li ng-mouseleave="mainNav.leave()" ng-mouseenter="mainNav.enter('plan-a-trip')" class="first submenu"&gt;
+					&lt;a href="/plan-a-trip/" class="plan-a-trip jb-primary-link"&gt;
+					    &lt;span class="foreground-sprite"&gt;
+					        &lt;img alt="" src="/img/bg-main-nav-primary.png" /&gt;
+					    &lt;/span&gt; &lt;span class="name"&gt;Plan a trip&lt;/span&gt; &lt;/a&gt;
+
+					&lt;div ng-class="{'show-menu':mainNav.show['plan-a-trip']}" class="jb-secondary-links"&gt;
+						&lt;div class="plan-a-trip-submenu"&gt;
+							&lt;ul&gt;
+								&lt;li class="flights"&gt;
+									&lt;a href="/flights/" class="jb-secondary-link"&gt;
+						                &lt;span class="foreground-sprite"&gt;
+						                    &lt;img alt="" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+						                &lt;/span&gt; &lt;span class="secondary-link-name"&gt;Flights&lt;/span&gt; &lt;/a&gt;
+								&lt;/li&gt;
+								&lt;li class="vacations"&gt;
+									&lt;a href="/vacations/" class="jb-secondary-link"&gt;
+						                &lt;span class="foreground-sprite"&gt;
+						                    &lt;img alt="" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+						                &lt;/span&gt; &lt;span class="secondary-link-name"&gt;Getaways&lt;/span&gt; &lt;/a&gt;
+								&lt;/li&gt;
+								&lt;li class="hotels"&gt;
+									&lt;a href="/hotels/" class="jb-secondary-link"&gt;
+					                    &lt;span class="foreground-sprite"&gt;
+					                        &lt;img alt="" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+					                    &lt;/span&gt; &lt;span class="secondary-link-name"&gt;Hotels&lt;/span&gt; &lt;/a&gt;
+								&lt;/li&gt;
+								&lt;li class="cars"&gt;
+									&lt;a href="/cars/" class="jb-secondary-link"&gt;
+					                    &lt;span class="foreground-sprite"&gt;
+					                        &lt;img alt="" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+					                    &lt;/span&gt; &lt;span class="secondary-link-name"&gt;Cars&lt;/span&gt; &lt;/a&gt;
+								&lt;/li&gt;
+								&lt;li class="cruises"&gt;
+									&lt;a target="_blank" href="/cruises/" class="jb-secondary-link"&gt;
+					                    &lt;span class="foreground-sprite"&gt;
+					                        &lt;img alt="" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+					                    &lt;/span&gt;
+										&lt;span class="secondary-link-name"&gt;Cruises&lt;img alt="opens a new window" class="new-window" src="/img/new-window-icon.png" /&gt;&lt;/span&gt;
+									&lt;/a&gt;
+								&lt;/li&gt;
+								&lt;li class="deals-sprite"&gt;
+									&lt;a href="/deals/" class="jb-secondary-link"&gt;
+					                    &lt;span class="foreground-sprite"&gt;
+					                        &lt;img alt="" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+					                    &lt;/span&gt; &lt;span class="secondary-link-name"&gt;Deals&lt;/span&gt; &lt;/a&gt;
+								&lt;/li&gt;
+
+								&lt;li class="additional-jb-link"&gt;
+									&lt;ul&gt;
+										&lt;li class="additional-plan-a-trip-links"&gt;
+											&lt;a href="/timetable/" class="jb-secondary-link"&gt;Timetables&lt;/a&gt;
+											&lt;a class="jb-secondary-link" href="/email/"&gt;Fare alerts&lt;/a&gt;
+											&lt;a href="/bestfarefinder/" id="FClink" class="jb-secondary-link"&gt;Best Fare Finder&lt;/a&gt;
+										&lt;/li&gt;
+									&lt;/ul&gt;
+								&lt;/li&gt;
+							&lt;/ul&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li class=""&gt;
+					&lt;a href="https://book.jetblue.com/B6.myb" class="manage-flight jb-primary-link"&gt;
+				        &lt;span class="foreground-sprite"&gt;
+				            &lt;img alt="" src="/img/bg-main-nav-primary.png" /&gt;
+				        &lt;/span&gt; &lt;span class="name"&gt;Manage flights&lt;/span&gt; &lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li class=""&gt;
+					&lt;a href="/wherewejet/" class="where-we-jet jb-primary-link"&gt;
+				        &lt;span class="foreground-sprite"&gt;
+				            &lt;img alt="" src="/img/bg-main-nav-primary.png" /&gt;
+				        &lt;/span&gt; &lt;span class="name"&gt;Where we jet&lt;/span&gt; &lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li ng-mouseleave="mainNav.leave()" ng-mouseenter="mainNav.enter('flying-on-jetblue')" class="submenu"&gt;
+					&lt;a href="/flying-on-jetblue/" class="flying-on-jetblue jb-primary-link"&gt;
+				        &lt;span class="foreground-sprite"&gt;
+				            &lt;img alt="" src="/img/bg-main-nav-primary.png" /&gt;
+				        &lt;/span&gt; &lt;span class="name"&gt;Flying on JetBlue&lt;/span&gt; &lt;/a&gt;
+
+					&lt;div ng-class="{'show-menu':mainNav.show['flying-on-jetblue']}" class="jb-secondary-links"&gt;
+						&lt;div class="flying-on-jetblue-submenu"&gt;
+							&lt;ul&gt;
+								&lt;li class="directv"&gt;
+									&lt;a href="/flying-on-jetblue/directv/" class="jb-secondary-link"&gt;
+				                        &lt;span class="foreground-sprite"&gt;
+				                            &lt;img alt="" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+				                        &lt;/span&gt; &lt;span class="secondary-link-name"&gt;36 channels of&lt;br /&gt;live TV at every seat&lt;/span&gt;
+									&lt;/a&gt;
+								&lt;/li&gt;
+
+								&lt;li class="first-bag"&gt;
+									&lt;a href="/flying-on-jetblue/snacks-and-drinks/" class="jb-secondary-link"&gt;
+				                        &lt;span class="foreground-sprite"&gt;
+				                            &lt;img alt="" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+				                        &lt;/span&gt; &lt;span class="secondary-link-name"&gt;Snacks &amp;amp; drinks&lt;/span&gt; &lt;/a&gt;
+								&lt;/li&gt;
+								&lt;li class="even-more"&gt;
+									&lt;a href="/flying-on-jetblue/even-more/" class="jb-secondary-link"&gt;
+				                        &lt;span class="foreground-sprite"&gt;
+				                            &lt;img alt="" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+				                        &lt;/span&gt; &lt;span class="secondary-link-name"&gt;Even More™&lt;/span&gt; &lt;/a&gt;
+								&lt;/li&gt;
+								&lt;li class="mint-tab"&gt;
+									&lt;a href="/flying-on-jetblue/mint/" class="jb-secondary-link"&gt;
+				                        &lt;span class="foreground-sprite"&gt;
+				                            &lt;img alt="" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+				                        &lt;/span&gt; &lt;span class="secondary-link-name"&gt;Mint&lt;/span&gt; &lt;/a&gt;
+								&lt;/li&gt;
+								&lt;li class="additional-jb-link"&gt;
+									&lt;ul&gt;
+										&lt;li class="additional-flying-on-jetblue-links-1"&gt;
+											&lt;a href="/flying-on-jetblue/mint/" class="jb-secondary-link"&gt;Mint&lt;/a&gt;
+											&lt;a href="/flying-on-jetblue/directv/" class="jb-secondary-link"&gt;DIRECTV®&lt;/a&gt;
+											&lt;a href="/flying-on-jetblue/snacks-and-drinks/" class="jb-secondary-link"&gt;Snacks &amp;amp; drinks&lt;/a&gt;
+											&lt;a href="/flying-on-jetblue/radio/" class="jb-secondary-link"&gt;SiriusXM Radio®&lt;/a&gt;
+											&lt;a href="/flying-on-jetblue/movies/" class="jb-secondary-link"&gt;Movies &amp;amp; more&lt;/a&gt;
+										&lt;/li&gt;
+										&lt;li class="additional-flying-on-jetblue-links-2"&gt;
+											&lt;a href="/flying-on-jetblue/even-more/" class="jb-secondary-link"&gt;Even More™&lt;/a&gt;
+											&lt;a href="/flying-on-jetblue/wifi/" class="jb-secondary-link"&gt;Wi-Fi&lt;/a&gt;
+											&lt;a class="jb-secondary-link" href="/flying-on-jetblue/shut-eye/"&gt;Shut Eye service&lt;/a&gt;
+											&lt;a class="jb-secondary-link" href="/flying-on-jetblue/customer-protection/"&gt;Customer protection&lt;/a&gt;
+											&lt;a href="/travel/planes/" class="jb-secondary-link"&gt;Our planes&lt;/a&gt;
+										&lt;/li&gt;
+									&lt;/ul&gt;
+								&lt;/li&gt;
+
+							&lt;/ul&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li ng-mouseleave="mainNav.leave()" ng-mouseenter="mainNav.enter('travel-information')" class="submenu"&gt;
+					&lt;a href="/travel/" class="travel-information jb-primary-link"&gt;
+				        &lt;span class="foreground-sprite"&gt;
+				            &lt;img alt="" src="/img/bg-main-nav-primary.png" /&gt;
+				        &lt;/span&gt; &lt;span class="name"&gt;Travel information&lt;/span&gt; &lt;/a&gt;
+
+					&lt;div ng-class="{'show-menu':mainNav.show['travel-information']}" class="jb-secondary-links"&gt;
+						&lt;div class="travel-information-submenu"&gt;
+							&lt;ul&gt;
+								&lt;li class="t-5"&gt;
+									&lt;a href="/travel/jfk/" class="jb-secondary-link"&gt;
+                        &lt;span class="foreground-sprite"&gt;
+                            &lt;img alt="T5" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+                        &lt;/span&gt; &lt;span class="secondary-link-name"&gt;JFK&lt;/span&gt; &lt;/a&gt;
+								&lt;/li&gt;
+								&lt;li class="baggage-info"&gt;
+									&lt;a href="/travel/baggage/" class="jb-secondary-link"&gt;
+                        &lt;span class="foreground-sprite"&gt;
+                            &lt;img alt="" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+                        &lt;/span&gt; &lt;span class="secondary-link-name"&gt;Baggage info&lt;/span&gt; &lt;/a&gt;
+								&lt;/li&gt;
+								&lt;li class="special-needs"&gt;
+									&lt;a href="/travel/special-needs/" class="jb-secondary-link"&gt;
+                        &lt;span class="foreground-sprite"&gt;
+                            &lt;img alt="" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+                        &lt;/span&gt; &lt;span class="secondary-link-name"&gt;Special assistance&lt;/span&gt; &lt;/a&gt;
+								&lt;/li&gt;
+								&lt;li class="jet-paws"&gt;
+									&lt;a href="/travel/pets/" class="jb-secondary-link"&gt;
+                        &lt;span class="foreground-sprite"&gt;
+                            &lt;img alt="" src="/img/bg_main_nav_secondary_icons.jpg" /&gt;
+                        &lt;/span&gt; &lt;span class="secondary-link-name"&gt;JetPaws™&lt;/span&gt; &lt;/a&gt;
+								&lt;/li&gt;
+								&lt;li class="additional-jb-link"&gt;
+									&lt;ul&gt;
+										&lt;li class="additional-travel-information-links-1"&gt;
+											&lt;a href="/travel/jfk/" class="jb-secondary-link"&gt;T5 at JFK&lt;/a&gt;
+											&lt;a href="/travel/baggage/" class="jb-secondary-link"&gt;Baggage info&lt;/a&gt;
+											&lt;a href="/travel/airports/" class="jb-secondary-link"&gt;Airport information&lt;/a&gt;
+											&lt;a href="/travel/cancellations-delays/" class="jb-secondary-link"&gt;Cancellations &amp;amp; delays&lt;/a&gt;
+											&lt;a href="/travel/our-fares/" class="jb-secondary-link"&gt;Our fares&lt;/a&gt;
+										&lt;/li&gt;
+										&lt;li class="additional-travel-information-links-2"&gt;
+											&lt;a href="/travel/special-needs/" class="jb-secondary-link"&gt;Special assistance&lt;/a&gt;
+											&lt;a href="/travel/international-travel/" class="jb-secondary-link"&gt;International travel&lt;/a&gt;
+											&lt;a href="/travel/groups/" class="jb-secondary-link"&gt;Groups (8+travelers)&lt;/a&gt;
+											&lt;a href="/travel/pets/" class="jb-secondary-link"&gt;Pets&lt;/a&gt;
+											&lt;a href="/travel/kids/" class="jb-secondary-link"&gt;Traveling with kids&lt;/a&gt;
+										&lt;/li&gt;
+									&lt;/ul&gt;
+								&lt;/li&gt;
+							&lt;/ul&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li class=""&gt;
+					&lt;a href="http://trueblue.jetblue.com/?intcmp=hd_trueblue" class="true-blue jb-primary-link" id="tbmvLoggedOutMode"&gt;
+                                    &lt;span class="foreground-sprite"&gt;
+                                        &lt;img alt="" src="/img/bg-main-nav-primary.png" /&gt;
+                                    &lt;/span&gt; &lt;span class="member"&gt;TrueBlue&lt;/span&gt; &lt;/a&gt;
+
+				&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;div ng-class="{'open': mainNav.isOpen}" id="jb-backdrop"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;/section&gt;
+&lt;section class="main-container ng-scope"&gt;
+	&lt;div ng-class="{'bigMap': pathMain == 'map'}" id="container"&gt;
+		&lt;div class="wrapper"&gt;
+			&lt;!-- uiView: tb-nav --&gt;&lt;aside ui-view="tb-nav" class="ng-scope"&gt;&lt;div class="leftMenu togglerMenu ng-scope" id="tb-nav"&gt;
+	&lt;a href="https://trueblue.jetblue.com"&gt;&lt;h3&gt;TrueBlue&lt;/h3&gt;&lt;/a&gt;
+	&lt;ul&gt;
+		&lt;li ng-class="{'active' : togglers.dashboard}"&gt;
+			&lt;a href="//trueblue.jetblue.com/group/trueblue/my-trueblue-home"&gt;Dashboard&lt;/a&gt;&lt;span ng-click="toggle('dashboard')" title="Toggle" class="toggler"&gt;Toggle&lt;/span&gt;
+			&lt;ul id="d"&gt;
+				&lt;li&gt;&lt;a class="" href="//trueblue.jetblue.com/group/trueblue/account-info"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a class="" href="//trueblue.jetblue.com/group/trueblue/activity-history"&gt;Activity history&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a class="" href="//www.jetblue.com/wishlist"&gt;Wishlist&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href="//trueblue.jetblue.com/group/trueblue/manage-my-points" class="lnDirect"&gt;Manage my points&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="//trueblue.jetblue.com/group/trueblue/current-deals" class="lnDirect"&gt;Current Deals&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="jetblue-badges-menu active" ng-class="{'active' : togglers.badges}"&gt;
+			&lt;a class="active" href="/"&gt;Badges&lt;/a&gt; &lt;span ng-click="toggle('badges')" title="Toggle" class="toggler"&gt;Toggle&lt;/span&gt;
+			&lt;ul class="navigation"&gt;
+				&lt;li ng-class="{'active' : pathMain == '' || pathMain == 'home' || pathMain == 'tutorial'}" class=""&gt;
+					&lt;a href="/home"&gt;Home&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li ng-class="{'active' : pathMain == 'badgecollection'}"&gt;
+					&lt;a href="/badgecollection"&gt;Badge Collection&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li ng-class="{'active' : pathMain == 'map'}"&gt;
+					&lt;!--&lt;a href="/map/u/Bartek/nkPCuz"&gt;map&lt;/a&gt;--&gt;
+					&lt;a href="/map"&gt;map&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li ng-class="{'active' : pathMain == 'friends'}" class="active"&gt;
+					&lt;a href="/friends"&gt;friends&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li ng-class="{'active' : pathMain == 'leaderboards'}"&gt;
+					&lt;a href="/leaderboards"&gt;leaderboards&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li ng-class="{'active' : pathMain == 'news'}"&gt;
+					&lt;a href="/news"&gt;news&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li ng-class="{'active' : pathMain == 'statistics'}"&gt;
+					&lt;a href="/statistics"&gt;my stats&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li ng-class="{'active' : pathMain == 'settings'}"&gt;
+					&lt;a href="/settings"&gt;Settings &amp;amp; Rules&lt;/a&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href="//trueblue.jetblue.com/group/trueblue/our-partners" class="lnDirect"&gt;Our Partners&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a href="//trueblue.jetblue.com/group/trueblue/how-it-works-family-pooling" class="lnDirect"&gt;Family pooling&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href="//trueblue.jetblue.com/group/trueblue/mosaic" class="lnDirect"&gt;Mosaic&lt;/a&gt;&lt;/li&gt;
+		&lt;li ng-class="{'active' : togglers.howItWorks}"&gt;
+			&lt;a href="//trueblue.jetblue.com/group/trueblue/how-it-works"&gt;How it works&lt;/a&gt;&lt;span ng-click="toggle('howItWorks')" title="Toggle" class="toggler"&gt;Toggle&lt;/span&gt;
+			&lt;ul id="d"&gt;
+				&lt;li&gt;
+					&lt;a class="" href="//trueblue.jetblue.com/group/trueblue/how-it-works-start-earning"&gt;Start Earning&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a class="" href="//trueblue.jetblue.com/group/trueblue/how-it-works-using-points"&gt;Using Points&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a class="" href="//trueblue.jetblue.com/group/trueblue/how-it-works-bonuses-and-badges"&gt;Bonuses &amp;amp; Badges&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a class="" href="//trueblue.jetblue.com/group/trueblue/trueblue-faqs"&gt;TrueBlue FAQs&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a class="" href="//trueblue.jetblue.com/group/trueblue/terms-and-conditions"&gt;Terms &amp;amp; Conditions&lt;/a&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;!--&lt;li&gt;&lt;a class="lnDirect" href="//trueblue.jetblue.com/group/trueblue-community"&gt;Community&lt;/a&gt;&lt;/li&gt;--&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;&lt;/aside&gt;
+			&lt;!-- uiView: content --&gt;&lt;div ui-view="content" class="rightContent ng-scope"&gt;&lt;div class="styledBox  ng-scope"&gt;
+    &lt;h2 class="ng-binding"&gt;Friends
+        &lt;!-- ngIf: $root.user.facebookId --&gt;&lt;a ng-if="$root.user.facebookId" class="seeAll ng-binding ng-scope" ng-click="inviteFriends()" href="#"&gt;Invite more friends!&lt;/a&gt;&lt;!-- end ngIf: $root.user.facebookId --&gt;
+    &lt;/h2&gt;
+
+    &lt;div class="container" id="friendsList"&gt;
+        &lt;!-- ngIf: !error.show &amp;&amp; $root.user.facebookId --&gt;&lt;friends-list "="" ng-if="!error.show &amp;amp;&amp;amp; $root.user.facebookId" params="{limit: 12}" tmpl-name="friendsListDetails" class="ng-scope ng-isolate-scope"&gt;
+	&lt;!-- ngIf: friends --&gt;
+	&lt;!-- ngIf: !friends --&gt;&lt;div ng-if="!friends" class="ng-scope"&gt;
+		&lt;p class="ng-binding"&gt;None of your Facebook friends are currently participating in Badges. &lt;a ng-click="inviteFriends()" class="ng-binding"&gt;Invite your friends to join you!&lt;/a&gt;&lt;/p&gt;
+	&lt;/div&gt;&lt;!-- end ngIf: !friends --&gt;
+
+
+
+
+
+
+&lt;/friends-list&gt;&lt;!-- end ngIf: !error.show &amp;&amp; $root.user.facebookId --&gt;
+        &lt;!-- ngIf: !$root.user.facebookId --&gt;
+    &lt;/div&gt;
+    &lt;!-- ngIf: error.show --&gt;
+    &lt;!-- ngIf: loading --&gt;
+    &lt;!-- ngIf: pagination --&gt;
+
+    &lt;a ng-click="user.facebookId ? disconnect('facebook') : connect('facebook')" ng-class="{'loading': loading.facebook}" title="Facebook" class="button blue medium fb ng-binding"&gt;Disconnect&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+			&lt;!-- uiView: error --&gt;&lt;div ui-view="error" class="ng-scope"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- uiView: big-map --&gt;&lt;div ui-view="big-map" class="ng-scope"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- uiView: footer --&gt;&lt;section ui-view="footer" class="ng-scope"&gt;&lt;div id="jb-footer" class="ng-scope"&gt;
+	&lt;div class="header-wrap clearfix"&gt;
+		&lt;div class="header-inner clearfix"&gt;
+			&lt;div class="app-wrap"&gt;
+				&lt;div class="media"&gt;
+					&lt;div class="app-wrap"&gt;
+						&lt;div class="media"&gt;
+							&lt;div class="img"&gt;
+								&lt;a alt-modified="true" alt="Link will open a new window" target="_blank" href="/mobile/iphone/appdownload/"&gt;&lt;img border="0" title="JetBlue app icon" src="/img/jbapp-icon.png?v=1" /&gt;&lt;/a&gt;
+							&lt;/div&gt;
+							&lt;div class="inner-media"&gt;
+								&lt;p class="hd"&gt;
+									&lt;strong&gt;Same smart app. More smartphones.&lt;/strong&gt;&lt;span class="fine-print"&gt;&lt;a href="/mobile/"&gt;Download the JetBlue mobile app for iPhone and Android now!&lt;/a&gt;&lt;/span&gt;
+								&lt;/p&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;!-- /.app-wrap --&gt;
+			&lt;div class="search-wrap"&gt;
+				&lt;form action="//help.jetblue.com/SRVS/CGI-BIN/webisapi.dll/,/" method="post" id="search-jb" name="search-jb" class="ng-pristine ng-valid"&gt;
+					&lt;input type="hidden" value="Askblue" name="kb" /&gt; &lt;input type="hidden" value="new" name="command" /&gt;
+					&lt;!-- &lt;input name="NATURAL" size="32" type="text" /&gt;--&gt;
+					&lt;div class="search-inner"&gt;
+						&lt;label class="offscreen" for="search-box"&gt;Search jetblue.com&lt;/label&gt;&lt;input type="text" placeholder="Search jetblue.com" name="NATURAL" id="search-box" /&gt;
+						&lt;input type="submit" value="Search" name="search_btn" id="loupe-btn" /&gt;
+					&lt;/div&gt;
+					&lt;!-- /.search-inner --&gt;
+				&lt;/form&gt;
+			&lt;/div&gt;
+			&lt;!-- /.search-wrap --&gt;
+		&lt;/div&gt;
+		&lt;!-- /.header-inner --&gt;
+	&lt;/div&gt;
+	&lt;!-- /.header-wrap --&gt;
+	&lt;div class="body-wrap clearfix"&gt;
+		&lt;div class="social-wrap clearfix"&gt;
+			&lt;ul&gt;
+				&lt;li class="soflyFooter"&gt;
+					&lt;div class="inner-media"&gt;
+						&lt;a href="/Sofly/"&gt;
+							&lt;img src="/img/soflybubbleicon.png" /&gt;&lt;span&gt;SoFly &lt;span class="jbSocialBlueTMMasterFooter"&gt;™&lt;/span&gt;&lt;/span&gt;
+						&lt;/a&gt;
+							&lt;span&gt;
+                                     View and share JetBlue pics and travel tricks 								
+                            &lt;/span&gt;
+						&lt;!--&lt;div class="soflyFooterNew"&gt;NEW&lt;/div&gt;--&gt;
+					&lt;/div&gt;
+				&lt;/li&gt;
+
+				&lt;li class="facebook"&gt;
+					&lt;div class="inner-media"&gt;
+						&lt;a alt-modified="true" alt="Link will open a new window" target="_blank" href="http://www.facebook.com/JetBlue"&gt;
+							&lt;img src="/img/facebookicon.png" /&gt;Like us on Facebook &lt;/a&gt;
+						&lt;span&gt; 1,091,137 like this&lt;/span&gt;
+					&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li class="twitter"&gt;
+					&lt;div class="inner-media"&gt;
+						&lt;a alt-modified="true" alt="Link will open a new window" target="_blank" href="http://twitter.com/jetblue"&gt;
+							&lt;img src="/img/twittericon.png" /&gt;Follow us at @JetBlue &lt;/a&gt;
+						&lt;span&gt; 1,982,414 followers&lt;/span&gt;
+					&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li class="instagram"&gt;
+					&lt;div class="inner-media"&gt;
+						&lt;a alt-modified="true" alt="Link will open a new window" target="_blank" href="http://www.instagram.com/jetblue"&gt;
+							&lt;img src="/img/instagramicon.png" /&gt;Follow us on Instagram &lt;/a&gt;
+						&lt;span&gt; 118k followers&lt;/span&gt;
+					&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li class="youtube"&gt;
+					&lt;div class="inner-media"&gt;
+						&lt;a alt-modified="true" alt="Link will open a new window" target="_blank" href="http://www.youtube.com/jetblue"&gt;
+							&lt;img src="/img/youtubeicon.png" /&gt;Visit us on YouTube &lt;/a&gt;
+						&lt;span&gt; 9,999,001 total views&lt;/span&gt;
+					&lt;/div&gt;
+				&lt;/li&gt;
+				&lt;li class="btblog"&gt;
+					&lt;div class="inner-media"&gt;
+						&lt;a alt-modified="true" alt="Link will open a new window" target="_blank" href="http://blog.jetblue.com"&gt;
+							&lt;img src="/img/bluetalesicon.png" /&gt;BlueTales Blog &lt;/a&gt; &lt;span&gt; Your destination for all things JetBlue and beyond &lt;p&gt; &lt;/p&gt;&lt;/span&gt;
+					&lt;/div&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+		&lt;div class="sitemap-wrap"&gt;
+			&lt;ul&gt;
+				&lt;li class="list-head"&gt;Get to know us&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/about/"&gt;About us&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="http://mediaroom.jetblue.com/media-room.aspx"&gt;Press room&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/corporate-social-responsibility/"&gt;CSR&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/green/"&gt;Sustainability&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/about/promotions/"&gt;Promotions&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/mobile/"&gt;Mobile&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a alt-modified="true" alt="Link will open a new window" target="_blank" href="http://shopjetblue.com/"&gt;ShopBlue&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a href="http://investor.jetblue.com/investor-relations.aspx"&gt;Investor Relations&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/sitemap/"&gt;Site map&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;!-- /Get to know us --&gt;
+			&lt;ul&gt;
+				&lt;li class="list-head"&gt;Services&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/airline-partners/"&gt;Partner airlines&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/vacations/"&gt;Getaways&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/corporate/"&gt;Corporate&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/travel-agents/"&gt;Travel agents&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/travel/special-needs/"&gt;Special assistance&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/travel-insurance/"&gt;Travel Insurance&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/traveldeals/veterans-discount/"&gt;Veterans Discount&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/contact-us/receipt/"&gt;Request a receipt&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;!-- /Services --&gt;
+			&lt;ul class="last"&gt;
+				&lt;li class="list-head"&gt;Talk to us&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/contact-us/"&gt;Contact us&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a alt-modified="true" alt="Link will open a new window" target="_blank" href="http://work-here.jetblue.com"&gt;Work here&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/legal/"&gt;Legal&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a alt-modified="true" alt="Link will open a new window" target="_blank" href="/p/jetblue_coc.pdf"&gt;Contract of Carriage&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/legal/customer-service-plan/"&gt;Customer Service Plan&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a alt-modified="true" alt="Link will open a new window" target="_blank" href="/p/Contingency_Plan_for_Lengthy_Tarmac_Delays.pdf"&gt;Tarmac Delay Plan&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/legal/privacy/"&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="/contact-us/email/suggestion/?topic=jetblue.com"&gt;Website feedback&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;!-- /Talk to us --&gt;
+		&lt;/div&gt;
+		&lt;!-- /.sitemap-wrap --&gt;
+		&lt;div ng-class="{'hide-cities':!showCities}" class="clearfix hide-cities" id="getaways-cities-list"&gt;
+			&lt;div class="getaways-cities-wrap"&gt;
+				&lt;p&gt;&lt;strong&gt;Top JetBlue Getaways vacation packages:&lt;/strong&gt;
+					&lt;a data-city="AUA" href="/vacations/aruba-vacations/?intcmp=jb_footer"&gt;Aruba&lt;/a&gt; |
+					&lt;a data-city="BGI" href="/vacations/barbados-vacations/?intcmp=jb_footer"&gt;Barbados&lt;/a&gt; |
+					&lt;a data-city="BDA" href="/vacations/bermuda-vacations/?intcmp=jb_footer"&gt;Bermuda&lt;/a&gt; |
+					&lt;a data-city="CUN" href="/vacations/cancun-vacations/?intcmp=jb_footer"&gt;Cancun, Mexico&lt;/a&gt; |
+					&lt;a data-city="CUR" href="/vacations/curacao-vacations/?intcmp=jb_footer"&gt;Curacao&lt;/a&gt; |
+					&lt;a href="/vacations/dominican-republic-vacations/?intcmp=jb_footer"&gt;Dominican Republic&lt;/a&gt; |
+					&lt;a data-city="FLL XFL" href="/vacations/fort-lauderdale-vacations/?intcmp=jb_footer"&gt;Fort Lauderdale&lt;/a&gt; |
+					&lt;a data-city="GCM" href="/vacations/grand-cayman-vacations/?intcmp=jb_footer"&gt;Grand Cayman&lt;/a&gt; |
+					&lt;a data-city="MBJ" href="/vacations/jamaica-vacations/?intcmp=jb_footer"&gt;Jamaica&lt;/a&gt; |
+					&lt;a data-city="LIR" href="/vacations/liberia-costa-rica-vacations/?intcmp=jb_footer"&gt;Liberia, Costa Rica&lt;/a&gt; |
+					&lt;a data-city="FLL" href="/vacations/miami-vacations/"&gt;Miami&lt;/a&gt; |
+					&lt;a data-city="NAS" href="/vacations/bahamas-vacations/?intcmp=jb_footer"&gt;Nassau, Bahamas&lt;/a&gt; |
+					&lt;a data-city="JFK LGA EWR HPN SWF NYC" href="/vacations/new-york-city-vacations/?intcmp=jb_footer"&gt;New York City&lt;/a&gt; |
+					&lt;a data-city="SJU PSE BQN" href="/vacations/puerto-rico-vacations/?intcmp=jb_footer"&gt;Puerto Rico&lt;/a&gt; |
+					&lt;a data-city="UVF" href="/vacations/st-lucia-vacations/?intcmp=jb_footer"&gt;St. Lucia&lt;/a&gt; |
+					&lt;a data-city="PLS" href="/vacations/turks-caicos-vacations/?intcmp=jb_footer"&gt;Turks &amp;amp; Caicos&lt;/a&gt; |
+					&lt;a data-city="MCO" href="/vacations/walt-disney-world-vacations/?intcmp=jb_footer"&gt;&lt;em&gt;Walt Disney World®&lt;/em&gt; Resort&lt;/a&gt;
+
+				&lt;span class="show-more"&gt;
+					&lt;a data-city="BQN" href="/vacations/aguadilla-vacations/?intcmp=jb_footer"&gt;Aguadilla, Puerto Rico&lt;/a&gt; |
+					&lt;a data-city="ABQ" href="/vacations/albuquerque-vacations/?intcmp=jb_footer"&gt;Albuquerque&lt;/a&gt; |
+					&lt;a data-city="LGB ZLA" href="/vacations/disneyland-vacations/?intcmp=jb_footer"&gt;Anaheim / Disneyland® Resort&lt;/a&gt; |
+					&lt;a data-city="BOG" href="/vacations/bogota-colombia-vacations/?intcmp=jb_footer"&gt;Bogotá, Colombia&lt;/a&gt; |
+					&lt;a data-city="BOS XBO" href="/vacations/boston-vacations/?intcmp=jb_footer"&gt;Boston&lt;/a&gt; |
+					&lt;a data-city="CUN" href="/vacations/riviera-maya-vacations/?intcmp=jb_footer"&gt;Cancun Riviera Maya&lt;/a&gt; |
+					&lt;a data-city="CTG" href="/vacations/cartagena-vacations/?intcmp=jb_footer"&gt;Cartagena, Colombia&lt;/a&gt; |
+					&lt;a data-city="CHS" href="/vacations/charleston-vacations/?intcmp=jb_footer"&gt;Charleston&lt;/a&gt; |
+					&lt;a data-city="RSW" href="/vacations/fort-myers-vacations/?intcmp=jb_footer"&gt;Fort Myers&lt;/a&gt; |
+					&lt;a data-city="GND" href="/vacations/grenada-vacations/?intcmp=jb_footer"&gt;Grenada&lt;/a&gt; |
+					&lt;a data-city="SAV" href="/vacations/hilton-head-vacations/?intcmp=jb_footer"&gt;Hilton Head, SC&lt;/a&gt; |
+					&lt;a data-city="LAX ZLA" href="/vacations/los-angeles-vacations/?intcmp=jb_footer"&gt;LA / Hollywood&lt;/a&gt; |
+					&lt;a data-city="LRM XDR" href="/vacations/la-romana-vacations/?intcmp=jb_footer"&gt;La Romana, Dominican Republic&lt;/a&gt; |
+					&lt;a data-city="LAS" href="/vacations/las-vegas-vacations/?intcmp=jb_footer"&gt;Las Vegas&lt;/a&gt; |
+					&lt;a data-city="MSY" href="/vacations/new-orleans-vacations/?intcmp=jb_footer"&gt;New Orleans&lt;/a&gt; |
+					&lt;a data-city="MCO" href="/vacations/orlando-vacations/?intcmp=jb_footer"&gt;Orlando&lt;/a&gt; |
+					&lt;a data-city="PHX" href="/vacations/phoenix-vacations/?intcmp=jb_footer"&gt;Phoenix&lt;/a&gt; |
+					&lt;a data-city="PSE" href="/vacations/ponce-vacations/?intcmp=jb_footer"&gt;Poncé, Puerto Rico&lt;/a&gt; |
+					&lt;a data-city="POP" href="/vacations/puerto-plata-vacations/?intcmp=jb_footer"&gt;Puerto Plata, Dominican Republic&lt;/a&gt; |
+					&lt;a data-city="PUJ" href="/vacations/punta-cana-vacations/?intcmp=jb_footer"&gt;Punta Cana, Dominican Republic&lt;/a&gt; |
+					&lt;a data-city="RNO" href="/vacations/reno-tahoe-vacations/?intcmp=jb_footer"&gt;Reno / Lake Tahoe&lt;/a&gt; |
+					&lt;a data-city="STX" href="/vacations/st-croix-vacations/?intcmp=jb_footer"&gt;Saint Croix&lt;/a&gt; |
+					&lt;a data-city="SXM" href="/vacations/st-maarten-vacations/?intcmp=jb_footer"&gt;Saint Martin&lt;/a&gt; |
+					&lt;a data-city="STT" href="/vacations/st-thomas-vacations/?intcmp=jb_footer"&gt;St. Thomas / St. John&lt;/a&gt; |
+					&lt;a data-city="SLC" href="/vacations/salt-lake-park-city-vacations/?intcmp=jb_footer"&gt;Salt Lake/Park City&lt;/a&gt; |
+					&lt;a data-city="AZS" href="/vacations/samana-vacations/?intcmp=jb_footer"&gt;Samana, Dominican Republic&lt;/a&gt; |
+					&lt;a data-city="SAN" href="/vacations/san-diego-vacations/?intcmp=jb_footer"&gt;San Diego&lt;/a&gt; |
+					&lt;a data-city="SFO XSF" href="/vacations/san-francisco-vacations/?intcmp=jb_footer"&gt;San Francisco&lt;/a&gt; |
+					&lt;a data-city="SJO" href="/vacations/costa-rica-vacations/"&gt;San José, Costa Rica&lt;/a&gt; |
+					&lt;a data-city="SJU" href="/vacations/san-juan-vacations/?intcmp=jb_footer"&gt;San Juan, Puerto Rico&lt;/a&gt; |
+					&lt;a data-city="SDQ XDR" href="/vacations/santo-domingo-vacations/?intcmp=jb_footer"&gt;Santo Domingo, Dominican Republic&lt;/a&gt; |
+					&lt;a data-city="SRQ" href="/vacations/sarasota-vacations/?intcmp=jb_footer"&gt;Sarasota&lt;/a&gt; |
+					&lt;a data-city="SAV" href="/vacations/savannah-georgia-vacations/?intcmp=jb_footer"&gt;Savannah&lt;/a&gt; |
+					&lt;a data-city="TPA" href="/vacations/st-pete-clearwater-vacations/?intcmp=jb_footer"&gt;St. Pete / Clearwater&lt;/a&gt; |
+					&lt;a data-city="PBI XFL" href="/vacations/west-palm-beach-vacations/?intcmp=jb_footer"&gt;West Palm Beach&lt;/a&gt;&lt;br /&gt;&lt;strong&gt;Travel ideas:&lt;/strong&gt;
+					&lt;a href="/vacations/adventure/?id=1&amp;amp;intcmp=jb_footer"&gt;Adventure&lt;/a&gt; |
+					&lt;a href="/vacations/all-inclusive/?id=2&amp;amp;intcmp=jb_footer"&gt;All Inclusive&lt;/a&gt; |
+					&lt;a href="/vacations/budget-travel/?id=3&amp;amp;intcmp=jb_footer"&gt;Budget&lt;/a&gt; |
+					&lt;a href="/vacations/family/?id=4&amp;amp;intcmp=jb_footer"&gt;Family&lt;/a&gt; |
+					&lt;a href="/vacations/girlfriend-getaways/?id=5&amp;amp;intcmp=jb_footer"&gt;Girlfriend Getaways&lt;/a&gt; |
+					&lt;a href="/vacations/golf/?id=6&amp;amp;intcmp=jb_footer"&gt;Golf&lt;/a&gt; |
+					&lt;a href="/vacations/Honeymoons-and-babymoons/?id=7&amp;amp;intcmp=jb_footer"&gt;Honeymoon &amp;amp; Babymoons&lt;/a&gt; |
+					&lt;a href="/vacations/luxury/?id=8&amp;amp;intcmp=jb_footer"&gt;Luxury&lt;/a&gt; |
+					&lt;a href="/vacations/Romance/?id=9&amp;amp;intcmp=jb_footer"&gt;Romance&lt;/a&gt; |
+					&lt;a href="/vacations/Spa/?id=10&amp;amp;intcmp=jb_footer"&gt;Spa&lt;/a&gt;
+			&lt;/span&gt;
+				&lt;/p&gt;
+				&lt;a ng-click="showCities = !showCities" id="city-expander"&gt;
+					&lt;p class="expander"&gt;
+						&lt;span class="ng-binding"&gt;Show more cities&lt;/span&gt;  &lt;!-- ngIf: !showCities --&gt;&lt;img width="7" height="8" ng-if="!showCities" alt="" src="/img/getaway-cities-list-arrow.jpg" class="down-icon ng-scope" /&gt;&lt;!-- end ngIf: !showCities --&gt;&lt;!-- ngIf: showCities --&gt;
+					&lt;/p&gt;
+				&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- /.body-wrap --&gt;
+	&lt;div class="footer-wrap"&gt;
+            &lt;span class="fine-print"&gt;
+                &lt;script type="text/javascript"&gt;
+	                &amp;lt;!--
+	                var copyrightcurrentTime = new Date()
+	                var copyrightyear = copyrightcurrentTime.getFullYear()
+	                document.write("&amp;amp;copy;" + copyrightyear + " JetBlue Airways")
+	                //--&amp;gt;
+                &lt;/script&gt;©2016 JetBlue Airways
+            &lt;/span&gt;
+	&lt;/div&gt;
+	&lt;!-- /.footer-wrap --&gt;
+&lt;/div&gt;&lt;/section&gt;
+
+&lt;/section&gt;
+
+&lt;!-- components --&gt;
+&lt;div id="fb-root" class=" fb_reset"&gt;&lt;div style="position: absolute; top: -10000px; height: 0px; width: 0px;"&gt;&lt;div&gt;&lt;iframe frameborder="0" name="fb_xdm_frame_http" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="http://staticxx.facebook.com/connect/xd_arbiter/r/bz-D0tzmBsw.js?version=42#channel=f5a015dcc52f1e&amp;amp;origin=http%3A%2F%2Forange-dev.isaacloud.com"&gt;&lt;/iframe&gt;&lt;iframe frameborder="0" name="fb_xdm_frame_https" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="https://staticxx.facebook.com/connect/xd_arbiter/r/bz-D0tzmBsw.js?version=42#channel=f5a015dcc52f1e&amp;amp;origin=http%3A%2F%2Forange-dev.isaacloud.com"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position: absolute; top: -10000px; height: 0px; width: 0px;"&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;!-- angular --&gt;
+&lt;script src="/components/angular/angular.min.js"&gt;&lt;/script&gt;
+
+&lt;!--FB SDK--&gt;
+&lt;script src="//connect.facebook.net/en_US/all.js"&gt;&lt;/script&gt;
+
+&lt;!--social--&gt;
+&lt;script&gt;
+// twitter
+(function(d) {
+	var js, id = 'twitter-wjs'; if(d.getElementById(id)){return;}
+	js = d.createElement('script'); js.id = id; js.async = true;
+	js.src = "https://platform.twitter.com/widgets.js";
+	d.getElementsByTagName('head')[0].appendChild(js);
+}(document));
+&lt;/script&gt;
+
+&lt;!-- config app --&gt;
+&lt;script src="/proxy/config"&gt;&lt;/script&gt;
+
+&lt;!-- ui router --&gt;
+&lt;script src="/components/angular-ui-router/release/angular-ui-router.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- angular acl --&gt;
+&lt;script src="/components/angular-acl/angular-acl.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- rest angular --&gt;
+&lt;script src="/components/lodash/lodash.min.js"&gt;&lt;/script&gt;
+&lt;script src="/components/restangular/dist/restangular.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- local storage --&gt;
+&lt;script src="/components/angular-local-storage/dist/angular-local-storage.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- translates --&gt;
+&lt;script src="/components/angular-translate/angular-translate.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- map --&gt;
+&lt;script src="/components/d3/d3.min.js"&gt;&lt;/script&gt;
+&lt;script src="/components/topojson/topojson.js"&gt;&lt;/script&gt;
+
+&lt;!-- angular ui notifications --&gt;
+&lt;script src="/components/angular-ui-notification/dist/angular-ui-notification.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- ng dialog --&gt;
+&lt;script src="/components/ng-dialog/js/ngDialog.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- angular intro --&gt;
+&lt;script src="/components/intro.js/minified/intro.min.js"&gt;&lt;/script&gt;
+&lt;script src="/components/angular-intro.js/build/angular-intro.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- scrollbar --&gt;
+&lt;script src="/components/ng-scrollbar/dist/ng-scrollbar.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- app --&gt;
+&lt;script src="/js/app.js"&gt;&lt;/script&gt;
+
+
+&lt;iframe frameborder="0" id="rufous-sandbox" scrolling="no" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;"&gt;&lt;/iframe&gt;&lt;/body&gt;&lt;/html&gt;</msg>
+<msg timestamp="20160718 09:50:17.385" level="FAIL">Page should have contained element 'xpath=//*[@id='friendsList']/p/a' but did not</msg>
+<status status="FAIL" endtime="20160718 09:50:17.385" starttime="20160718 09:50:15.324"></status>
+</kw>
+<status status="FAIL" endtime="20160718 09:50:17.385" starttime="20160718 09:50:15.323"></status>
+</kw>
+<status status="FAIL" endtime="20160718 09:50:17.386" critical="yes" starttime="20160718 09:50:13.098">Page should have contained element 'xpath=//*[@id='friendsList']/p/a' but did not</status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160718 09:50:18.413" starttime="20160718 09:50:17.387"></status>
+</kw>
+<status status="FAIL" endtime="20160718 09:50:18.413" starttime="20160718 09:49:58.381"></status>
+</suite>
+<suite source="/home/soi/tests/jetblue/front-tests/test-cases/home.robot" id="s1-s3" name="Home">
+<kw type="setup" name="Log in to Orange-Dev" library="general_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160718 09:50:18.420" level="INFO">Opening browser 'Firefox' to base url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:50:25.050" starttime="20160718 09:50:18.420"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160718 09:50:26.061" starttime="20160718 09:50:25.050"></status>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<doc>Sets the `width` and `height` of the current window to the specified values.</doc>
+<arguments>
+<arg>${1920}</arg>
+<arg>${1080}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:50:27.125" starttime="20160718 09:50:26.061"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:50:27.126" starttime="20160718 09:50:27.126"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3 sec</arg>
+<arg>3 sec</arg>
+<arg>Input Text</arg>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<msg timestamp="20160718 09:50:27.128" level="INFO">Typing text '10' into text field 'xpath=/html/body/section/div/div[1]/div/form/input[2]'</msg>
+<status status="PASS" endtime="20160718 09:50:30.344" starttime="20160718 09:50:27.127"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:30.344" starttime="20160718 09:50:27.127"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/button</arg>
+</arguments>
+<msg timestamp="20160718 09:50:30.345" level="INFO">Clicking element 'xpath=/html/body/section/div/div[1]/div/form/button'.</msg>
+<status status="PASS" endtime="20160718 09:50:32.457" starttime="20160718 09:50:30.344"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20160718 09:50:32.457" level="INFO">Opening url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:50:33.878" starttime="20160718 09:50:32.457"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:33.879" starttime="20160718 09:50:18.419"></status>
+</kw>
+<test id="s1-s3-t1" name="Home page is open correctly">
+<kw name="Open Home Page" library="home_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[1]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:50:33.880" level="INFO">Clicking element 'xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[1]/a'.</msg>
+<status status="PASS" endtime="20160718 09:50:36.399" starttime="20160718 09:50:33.880"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:36.399" starttime="20160718 09:50:33.879"></status>
+</kw>
+<kw name="Verify The Presence Of Map Element" library="home_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.smallMap.ng-scope div.map-overlay</arg>
+</arguments>
+<msg timestamp="20160718 09:50:37.412" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.smallMap.ng-scope div.map-overlay'.</msg>
+<status status="PASS" endtime="20160718 09:50:37.412" starttime="20160718 09:50:36.400"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:37.412" starttime="20160718 09:50:36.400"></status>
+</kw>
+<kw name="Verify The Presence Of Badges Element" library="home_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.badgesShort.styledBox.ng-scope</arg>
+</arguments>
+<msg timestamp="20160718 09:50:38.425" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.badgesShort.styledBox.ng-scope'.</msg>
+<status status="PASS" endtime="20160718 09:50:38.425" starttime="20160718 09:50:37.413"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:38.425" starttime="20160718 09:50:37.413"></status>
+</kw>
+<kw name="Verify The Presence Of Get Badges Element" library="home_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.getBadgesShort.column23.styledBox.ng-scope</arg>
+</arguments>
+<msg timestamp="20160718 09:50:39.437" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.getBadgesShort.column23.styledBox.ng-scope'.</msg>
+<status status="PASS" endtime="20160718 09:50:39.437" starttime="20160718 09:50:38.426"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:39.438" starttime="20160718 09:50:38.426"></status>
+</kw>
+<kw name="Verify The Presence Of News Element" library="home_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.newsShort.column13.styledBox.ng-isolate-scope</arg>
+</arguments>
+<msg timestamp="20160718 09:50:40.450" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.newsShort.column13.styledBox.ng-isolate-scope'.</msg>
+<status status="PASS" endtime="20160718 09:50:40.450" starttime="20160718 09:50:39.439"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:40.450" starttime="20160718 09:50:39.438"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:40.451" critical="yes" starttime="20160718 09:50:33.879"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160718 09:50:41.480" starttime="20160718 09:50:40.451"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:41.480" starttime="20160718 09:50:18.415"></status>
+</suite>
+<suite source="/home/soi/tests/jetblue/front-tests/test-cases/leaderboards.robot" id="s1-s4" name="Leaderboards">
+<kw type="setup" name="Log in to Orange-Dev" library="general_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160718 09:50:41.487" level="INFO">Opening browser 'Firefox' to base url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:50:48.310" starttime="20160718 09:50:41.487"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160718 09:50:49.321" starttime="20160718 09:50:48.311"></status>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<doc>Sets the `width` and `height` of the current window to the specified values.</doc>
+<arguments>
+<arg>${1920}</arg>
+<arg>${1080}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:50:50.361" starttime="20160718 09:50:49.321"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:50:50.362" starttime="20160718 09:50:50.362"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3 sec</arg>
+<arg>3 sec</arg>
+<arg>Input Text</arg>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<msg timestamp="20160718 09:50:50.364" level="INFO">Typing text '10' into text field 'xpath=/html/body/section/div/div[1]/div/form/input[2]'</msg>
+<status status="PASS" endtime="20160718 09:50:53.528" starttime="20160718 09:50:50.364"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:53.529" starttime="20160718 09:50:50.363"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/button</arg>
+</arguments>
+<msg timestamp="20160718 09:50:53.529" level="INFO">Clicking element 'xpath=/html/body/section/div/div[1]/div/form/button'.</msg>
+<status status="PASS" endtime="20160718 09:50:55.651" starttime="20160718 09:50:53.529"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20160718 09:50:55.652" level="INFO">Opening url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:50:57.068" starttime="20160718 09:50:55.651"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:57.068" starttime="20160718 09:50:41.486"></status>
+</kw>
+<test id="s1-s4-t1" name="Leaderboard page is open correctly">
+<kw name="Open Leaderboards Page" library="leaderboards_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[5]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:50:57.069" level="INFO">Clicking element 'xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[5]/a'.</msg>
+<status status="PASS" endtime="20160718 09:50:59.477" starttime="20160718 09:50:57.069"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:50:59.478" starttime="20160718 09:50:57.069"></status>
+</kw>
+<kw name="Verify The Presence Of Leaderboard Space" library="leaderboards_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.leaderboardPage.ng-scope</arg>
+</arguments>
+<msg timestamp="20160718 09:51:00.492" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.leaderboardPage.ng-scope'.</msg>
+<status status="PASS" endtime="20160718 09:51:00.492" starttime="20160718 09:50:59.479"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:00.493" starttime="20160718 09:50:59.478"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:00.493" critical="yes" starttime="20160718 09:50:57.068"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160718 09:51:01.531" starttime="20160718 09:51:00.494"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:01.531" starttime="20160718 09:50:41.482"></status>
+</suite>
+<suite source="/home/soi/tests/jetblue/front-tests/test-cases/map.robot" id="s1-s5" name="Map">
+<kw type="setup" name="Log in to Orange-Dev" library="general_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160718 09:51:01.542" level="INFO">Opening browser 'Firefox' to base url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:51:08.584" starttime="20160718 09:51:01.542"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160718 09:51:09.594" starttime="20160718 09:51:08.584"></status>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<doc>Sets the `width` and `height` of the current window to the specified values.</doc>
+<arguments>
+<arg>${1920}</arg>
+<arg>${1080}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:51:10.632" starttime="20160718 09:51:09.594"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:51:10.633" starttime="20160718 09:51:10.633"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3 sec</arg>
+<arg>3 sec</arg>
+<arg>Input Text</arg>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<msg timestamp="20160718 09:51:10.635" level="INFO">Typing text '10' into text field 'xpath=/html/body/section/div/div[1]/div/form/input[2]'</msg>
+<status status="PASS" endtime="20160718 09:51:13.798" starttime="20160718 09:51:10.634"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:13.798" starttime="20160718 09:51:10.634"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/button</arg>
+</arguments>
+<msg timestamp="20160718 09:51:13.798" level="INFO">Clicking element 'xpath=/html/body/section/div/div[1]/div/form/button'.</msg>
+<status status="PASS" endtime="20160718 09:51:15.918" starttime="20160718 09:51:13.798"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20160718 09:51:15.918" level="INFO">Opening url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:51:17.351" starttime="20160718 09:51:15.918"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:17.351" starttime="20160718 09:51:01.541"></status>
+</kw>
+<test id="s1-s5-t1" name="Map page is open correctly">
+<kw name="Open Map Page" library="map_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[3]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:51:17.353" level="INFO">Clicking element 'xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[3]/a'.</msg>
+<status status="PASS" endtime="20160718 09:51:19.788" starttime="20160718 09:51:17.353"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:19.789" starttime="20160718 09:51:17.352"></status>
+</kw>
+<kw name="Verify The Presence Of Map" library="map_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container.bigMap div.ng-scope div#bigMap.ng-scope div div#map.jb-badges-map.ng-isolate-scope</arg>
+</arguments>
+<msg timestamp="20160718 09:51:20.802" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container.bigMap div.ng-scope div#bigMap.ng-scope div div#map.jb-badges-map.ng-isolate-scope'.</msg>
+<status status="PASS" endtime="20160718 09:51:20.802" starttime="20160718 09:51:19.789"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:20.803" starttime="20160718 09:51:19.789"></status>
+</kw>
+<kw name="Verify The Presence Of User Bar" library="map_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container.bigMap div.ng-scope div#bigMap.ng-scope div.wrapper div.floatBox.opened</arg>
+</arguments>
+<msg timestamp="20160718 09:51:21.814" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container.bigMap div.ng-scope div#bigMap.ng-scope div.wrapper div.floatBox.opened'.</msg>
+<status status="PASS" endtime="20160718 09:51:21.814" starttime="20160718 09:51:20.804"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:21.815" starttime="20160718 09:51:20.803"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:21.815" critical="yes" starttime="20160718 09:51:17.351"></status>
+</test>
+<test id="s1-s5-t2" name="User icon redirect to the dashboard">
+<kw name="Return To Dashboard By Selecting User Icon" library="map_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container.bigMap div.ng-scope div#bigMap.ng-scope div.wrapper div.floatBox.opened div.handler div.profile a div.user-avatar.ng-isolate-scope div.level div.progress-ring.ng-scope svg circle.steps-gap</arg>
+</arguments>
+<msg timestamp="20160718 09:51:21.816" level="INFO">Clicking element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container.bigMap div.ng-scope div#bigMap.ng-scope div.wrapper div.floatBox.opened div.handler div.profile a div.user-avatar.ng-isolate-scope div.level div.progress-ring.ng-scope svg circle.steps-gap'.</msg>
+<status status="PASS" endtime="20160718 09:51:24.014" starttime="20160718 09:51:21.816"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:24.014" starttime="20160718 09:51:21.816"></status>
+</kw>
+<kw name="Verify The Presence Of Home Content" library="map_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope</arg>
+</arguments>
+<msg timestamp="20160718 09:51:25.026" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope'.</msg>
+<status status="PASS" endtime="20160718 09:51:25.026" starttime="20160718 09:51:24.015"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:25.027" starttime="20160718 09:51:24.014"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:25.027" critical="yes" starttime="20160718 09:51:21.815"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160718 09:51:26.064" starttime="20160718 09:51:25.028"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:26.064" starttime="20160718 09:51:01.533"></status>
+</suite>
+<suite source="/home/soi/tests/jetblue/front-tests/test-cases/my_stats.robot" id="s1-s6" name="My Stats">
+<kw type="setup" name="Log in to Orange-Dev" library="general_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160718 09:51:26.073" level="INFO">Opening browser 'Firefox' to base url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:51:33.758" starttime="20160718 09:51:26.073"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160718 09:51:34.767" starttime="20160718 09:51:33.758"></status>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<doc>Sets the `width` and `height` of the current window to the specified values.</doc>
+<arguments>
+<arg>${1920}</arg>
+<arg>${1080}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:51:35.822" starttime="20160718 09:51:34.768"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:51:35.823" starttime="20160718 09:51:35.823"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3 sec</arg>
+<arg>3 sec</arg>
+<arg>Input Text</arg>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<msg timestamp="20160718 09:51:35.825" level="INFO">Typing text '10' into text field 'xpath=/html/body/section/div/div[1]/div/form/input[2]'</msg>
+<status status="PASS" endtime="20160718 09:51:39.030" starttime="20160718 09:51:35.824"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:39.030" starttime="20160718 09:51:35.824"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/button</arg>
+</arguments>
+<msg timestamp="20160718 09:51:39.031" level="INFO">Clicking element 'xpath=/html/body/section/div/div[1]/div/form/button'.</msg>
+<status status="PASS" endtime="20160718 09:51:41.149" starttime="20160718 09:51:39.030"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20160718 09:51:41.150" level="INFO">Opening url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:51:43.473" starttime="20160718 09:51:41.150"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:43.474" starttime="20160718 09:51:26.072"></status>
+</kw>
+<test id="s1-s6-t1" name="My Stats page is open correctly">
+<kw name="Open My Stats Page" library="my_stats_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[7]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:51:43.476" level="INFO">Clicking element 'xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[7]/a'.</msg>
+<status status="PASS" endtime="20160718 09:51:45.621" starttime="20160718 09:51:43.476"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:45.621" starttime="20160718 09:51:43.475"></status>
+</kw>
+<kw name="Verify The Presence Of True Blue Statistics Space" library="my_stats_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css= html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.statisticsPage.ng-scope div.container.trueblue.statisticsOverall</arg>
+</arguments>
+<msg timestamp="20160718 09:51:46.631" level="INFO">Current page contains element 'css= html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.statisticsPage.ng-scope div.container.trueblue.statisticsOverall'.</msg>
+<status status="PASS" endtime="20160718 09:51:46.632" starttime="20160718 09:51:45.622"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:46.632" starttime="20160718 09:51:45.621"></status>
+</kw>
+<kw name="Verify The Presence Of Badges Collection Space" library="my_stats_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css= html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.statisticsPage.ng-scope div.container.collection</arg>
+</arguments>
+<msg timestamp="20160718 09:51:47.640" level="INFO">Current page contains element 'css= html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.statisticsPage.ng-scope div.container.collection'.</msg>
+<status status="PASS" endtime="20160718 09:51:47.641" starttime="20160718 09:51:46.633"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:47.641" starttime="20160718 09:51:46.632"></status>
+</kw>
+<kw name="Verify The Presence Of Friends Space" library="my_stats_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css= html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.statisticsPage.ng-scope div.container.friends</arg>
+</arguments>
+<msg timestamp="20160718 09:51:48.656" level="INFO">Current page contains element 'css= html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.statisticsPage.ng-scope div.container.friends'.</msg>
+<status status="PASS" endtime="20160718 09:51:48.656" starttime="20160718 09:51:47.642"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:48.657" starttime="20160718 09:51:47.641"></status>
+</kw>
+<kw name="Verify The Presence Of Map Shares Space" library="my_stats_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css= html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.statisticsPage.ng-scope div.container.mapShares div.mapStatistic</arg>
+</arguments>
+<msg timestamp="20160718 09:51:49.669" level="INFO">Current page contains element 'css= html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.statisticsPage.ng-scope div.container.mapShares div.mapStatistic'.</msg>
+<status status="PASS" endtime="20160718 09:51:49.669" starttime="20160718 09:51:48.658"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:49.670" starttime="20160718 09:51:48.657"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:49.670" critical="yes" starttime="20160718 09:51:43.474"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160718 09:51:50.709" starttime="20160718 09:51:49.671"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:51:50.709" starttime="20160718 09:51:26.066"></status>
+</suite>
+<suite source="/home/soi/tests/jetblue/front-tests/test-cases/news.robot" id="s1-s7" name="News">
+<kw type="setup" name="Log in to Orange-Dev" library="general_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160718 09:51:50.718" level="INFO">Opening browser 'Firefox' to base url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:51:57.396" starttime="20160718 09:51:50.718"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160718 09:51:58.411" starttime="20160718 09:51:57.396"></status>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<doc>Sets the `width` and `height` of the current window to the specified values.</doc>
+<arguments>
+<arg>${1920}</arg>
+<arg>${1080}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:51:59.486" starttime="20160718 09:51:58.412"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:51:59.487" starttime="20160718 09:51:59.487"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3 sec</arg>
+<arg>3 sec</arg>
+<arg>Input Text</arg>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<msg timestamp="20160718 09:51:59.489" level="INFO">Typing text '10' into text field 'xpath=/html/body/section/div/div[1]/div/form/input[2]'</msg>
+<status status="PASS" endtime="20160718 09:52:02.649" starttime="20160718 09:51:59.488"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:02.649" starttime="20160718 09:51:59.488"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/button</arg>
+</arguments>
+<msg timestamp="20160718 09:52:02.650" level="INFO">Clicking element 'xpath=/html/body/section/div/div[1]/div/form/button'.</msg>
+<status status="PASS" endtime="20160718 09:52:04.766" starttime="20160718 09:52:02.650"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20160718 09:52:04.767" level="INFO">Opening url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:52:06.181" starttime="20160718 09:52:04.767"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:06.181" starttime="20160718 09:51:50.717"></status>
+</kw>
+<test id="s1-s7-t1" name="News page is open correctly">
+<kw name="Open News Page" library="news_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[6]</arg>
+</arguments>
+<msg timestamp="20160718 09:52:06.182" level="INFO">Clicking element 'xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[6]'.</msg>
+<status status="PASS" endtime="20160718 09:52:08.523" starttime="20160718 09:52:06.182"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:08.523" starttime="20160718 09:52:06.182"></status>
+</kw>
+<kw name="Verify The Presence Of News Space" library="news_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css= html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.ng-scope</arg>
+</arguments>
+<msg timestamp="20160718 09:52:09.538" level="INFO">Current page contains element 'css= html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div.styledBox.ng-scope'.</msg>
+<status status="PASS" endtime="20160718 09:52:09.539" starttime="20160718 09:52:08.524"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:09.539" starttime="20160718 09:52:08.523"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:09.539" critical="yes" starttime="20160718 09:52:06.181"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160718 09:52:10.569" starttime="20160718 09:52:09.540"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:10.569" starttime="20160718 09:51:50.711"></status>
+</suite>
+<suite source="/home/soi/tests/jetblue/front-tests/test-cases/settings.robot" id="s1-s8" name="Settings">
+<kw type="setup" name="Log in to Orange-Dev" library="general_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160718 09:52:10.576" level="INFO">Opening browser 'Firefox' to base url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:52:17.259" starttime="20160718 09:52:10.576"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20160718 09:52:18.270" starttime="20160718 09:52:17.260"></status>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<doc>Sets the `width` and `height` of the current window to the specified values.</doc>
+<arguments>
+<arg>${1920}</arg>
+<arg>${1080}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:52:19.333" starttime="20160718 09:52:18.270"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20160718 09:52:19.333" starttime="20160718 09:52:19.333"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3 sec</arg>
+<arg>3 sec</arg>
+<arg>Input Text</arg>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/input[2]</arg>
+<arg>${USER}</arg>
+</arguments>
+<msg timestamp="20160718 09:52:19.335" level="INFO">Typing text '10' into text field 'xpath=/html/body/section/div/div[1]/div/form/input[2]'</msg>
+<status status="PASS" endtime="20160718 09:52:22.507" starttime="20160718 09:52:19.334"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:22.507" starttime="20160718 09:52:19.334"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/div/div[1]/div/form/button</arg>
+</arguments>
+<msg timestamp="20160718 09:52:22.507" level="INFO">Clicking element 'xpath=/html/body/section/div/div[1]/div/form/button'.</msg>
+<status status="PASS" endtime="20160718 09:52:24.626" starttime="20160718 09:52:22.507"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20160718 09:52:24.627" level="INFO">Opening url 'http://orange-dev.isaacloud.com/'</msg>
+<status status="PASS" endtime="20160718 09:52:26.028" starttime="20160718 09:52:24.626"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:26.028" starttime="20160718 09:52:10.575"></status>
+</kw>
+<test id="s1-s8-t1" name="My Stats page is open correctly">
+<kw name="Open Settings And Rules Page" library="settings_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[8]/a</arg>
+</arguments>
+<msg timestamp="20160718 09:52:26.029" level="INFO">Clicking element 'xpath=/html/body/section/section[2]/div/div[1]/aside/div/ul/li[4]/ul/li[8]/a'.</msg>
+<status status="PASS" endtime="20160718 09:52:28.319" starttime="20160718 09:52:26.029"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:28.319" starttime="20160718 09:52:26.029"></status>
+</kw>
+<kw name="Verify The Presence Of Connect Space" library="settings_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div#settings.styledBox.ng-scope div.social-connect.section</arg>
+</arguments>
+<msg timestamp="20160718 09:52:29.328" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div#settings.styledBox.ng-scope div.social-connect.section'.</msg>
+<status status="PASS" endtime="20160718 09:52:29.328" starttime="20160718 09:52:28.320"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:29.328" starttime="20160718 09:52:28.319"></status>
+</kw>
+<kw name="Verify The Presence Of Choose Avatar Space" library="settings_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div#settings.styledBox.ng-scope div.social-connect.section</arg>
+</arguments>
+<msg timestamp="20160718 09:52:30.340" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div#settings.styledBox.ng-scope div.social-connect.section'.</msg>
+<status status="PASS" endtime="20160718 09:52:30.340" starttime="20160718 09:52:29.329"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:30.341" starttime="20160718 09:52:29.329"></status>
+</kw>
+<kw name="Verify The Presence Of Send Us Feedback Space" library="settings_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div#settings.styledBox.ng-scope div.section.contact-form form.ng-pristine.ng-valid</arg>
+</arguments>
+<msg timestamp="20160718 09:52:31.352" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div#settings.styledBox.ng-scope div.section.contact-form form.ng-pristine.ng-valid'.</msg>
+<status status="PASS" endtime="20160718 09:52:31.352" starttime="20160718 09:52:30.342"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:31.352" starttime="20160718 09:52:30.341"></status>
+</kw>
+<kw name="Verify The Presence Of FAQ Link" library="settings_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div#settings.styledBox.ng-scope div.section a.ng-binding</arg>
+</arguments>
+<msg timestamp="20160718 09:52:32.365" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div#settings.styledBox.ng-scope div.section a.ng-binding'.</msg>
+<status status="PASS" endtime="20160718 09:52:32.366" starttime="20160718 09:52:31.353"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:32.366" starttime="20160718 09:52:31.353"></status>
+</kw>
+<kw name="Verify The Presence Of Disable Badging Link" library="settings_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div#settings.styledBox.ng-scope div.section a.ng-binding</arg>
+</arguments>
+<msg timestamp="20160718 09:52:33.384" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div#settings.styledBox.ng-scope div.section a.ng-binding'.</msg>
+<status status="PASS" endtime="20160718 09:52:33.385" starttime="20160718 09:52:32.367"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:33.385" starttime="20160718 09:52:32.366"></status>
+</kw>
+<kw name="Verify The Presence Of Terms And conditions Link" library="settings_resource">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div#settings.styledBox.ng-scope div.section a.ng-binding</arg>
+</arguments>
+<msg timestamp="20160718 09:52:34.399" level="INFO">Current page contains element 'css=html body section#JetBlue.ng-scope section.main-container.ng-scope div#container div.wrapper div.rightContent.ng-scope div#settings.styledBox.ng-scope div.section a.ng-binding'.</msg>
+<status status="PASS" endtime="20160718 09:52:34.399" starttime="20160718 09:52:33.386"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:34.399" starttime="20160718 09:52:33.385"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:34.399" critical="yes" starttime="20160718 09:52:26.028"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20160718 09:52:35.434" starttime="20160718 09:52:34.401"></status>
+</kw>
+<status status="PASS" endtime="20160718 09:52:35.434" starttime="20160718 09:52:10.570"></status>
+</suite>
+<status status="FAIL" endtime="20160718 09:52:35.437" starttime="20160718 09:48:35.027"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="1">Critical Tests</stat>
-<stat fail="1" pass="1">All Tests</stat>
+<stat fail="1" pass="8">Critical Tests</stat>
+<stat fail="1" pass="8">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="jetblueTests" pass="1">jetblueTests</stat>
+<stat fail="1" id="s1" name="Test-Cases" pass="8">Test-Cases</stat>
+<stat fail="0" id="s1-s1" name="Badge Collection" pass="1">Test-Cases.Badge Collection</stat>
+<stat fail="1" id="s1-s2" name="Friends" pass="0">Test-Cases.Friends</stat>
+<stat fail="0" id="s1-s3" name="Home" pass="1">Test-Cases.Home</stat>
+<stat fail="0" id="s1-s4" name="Leaderboards" pass="1">Test-Cases.Leaderboards</stat>
+<stat fail="0" id="s1-s5" name="Map" pass="2">Test-Cases.Map</stat>
+<stat fail="0" id="s1-s6" name="My Stats" pass="1">Test-Cases.My Stats</stat>
+<stat fail="0" id="s1-s7" name="News" pass="1">Test-Cases.News</stat>
+<stat fail="0" id="s1-s8" name="Settings" pass="1">Test-Cases.Settings</stat>
 </suite>
 </statistics>
 <errors>
